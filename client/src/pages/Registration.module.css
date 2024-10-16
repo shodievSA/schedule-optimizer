@@ -1,0 +1,115 @@
+@media (0 < width <= 480px) {
+
+    .page-container {
+        @apply h-full flex justify-center items-center px-5
+    }
+    
+    .login-form {
+        @apply w-full text-center flex flex-col gap-y-10
+    }
+    
+    .login-form > h1 {
+        @apply text-4xl font-medium
+    }
+    
+    .login-form form {
+        @apply flex flex-col items-center gap-y-6
+    }
+
+    .login-form form > label > input {
+        font-size: 16px;
+    }
+
+    .email-icon {
+        @apply h-6 w-6 opacity-70
+    }
+
+    .password-icon {
+        @apply h-6 w-6 opacity-70
+    }
+
+}
+
+@media (480px < width <= 834px) {
+
+    .page-container {
+        @apply h-full flex justify-center items-center px-10
+    }
+    
+    .login-form {
+        @apply w-full max-w-lg text-center flex flex-col gap-y-10
+    }
+    
+    .login-form > h1 {
+        @apply text-4xl font-medium
+    }
+    
+    .login-form form {
+        @apply flex flex-col items-center gap-y-6
+    }
+
+    .email-icon {
+        @apply h-6 w-6 opacity-70
+    }
+
+    .password-icon {
+        @apply h-6 w-6 opacity-70
+    }
+
+}
+
+@media (834px < width < 1440px) {
+
+    .page-container {
+        @apply h-full flex justify-center items-center px-10
+    }
+    
+    .login-form {
+        @apply w-full max-w-lg text-center flex flex-col gap-y-10
+    }
+    
+    .login-form > h1 {
+        @apply text-5xl font-medium
+    }
+    
+    .login-form form {
+        @apply flex flex-col items-center gap-y-6
+    }
+
+    .email-icon {
+        @apply h-6 w-6 opacity-70
+    }
+
+    .password-icon {
+        @apply h-6 w-6 opacity-70
+    }
+
+}
+
+@media (min-width: 1440px) {
+
+    .page-container {
+        @apply h-full flex justify-center items-center
+    }
+    
+    .login-form {
+        @apply w-2/5 text-center flex flex-col gap-y-16
+    }
+    
+    .login-form > h1 {
+        @apply text-6xl font-medium
+    }
+    
+    .login-form form {
+        @apply flex flex-col items-center gap-y-8
+    }
+
+    .email-icon {
+        @apply h-6 w-6 opacity-70
+    }
+
+    .password-icon {
+        @apply h-6 w-6 opacity-70
+    }
+
+}
