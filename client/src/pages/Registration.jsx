@@ -1,3 +1,4 @@
+import { TypeAnimation } from 'react-type-animation';
 import styles from "./Registration.module.css"
 
 function Registration() {
@@ -15,7 +16,13 @@ function Registration() {
     return (
         <div className={styles['page-container']}>
             <div className={styles['login-form']}>
-                <h1>Hello, Gorlock</h1>
+                <h1>
+                    <TypeAnimation
+                    sequence={['Hello, Gorlock']}
+                    speed={25}
+                    cursor={false}
+                    />
+                </h1>
                 <form onSubmit={handleLogIn}>
                     <label 
                     className="input input-lg input-bordered flex items-center gap-2 w-full"
@@ -33,6 +40,7 @@ function Registration() {
                         </svg>
                         
                         <input 
+                        autoComplete='off'
                         name="webster-email"
                         type="text" 
                         className="grow" 
@@ -54,6 +62,7 @@ function Registration() {
                             clipRule="evenodd" />
                         </svg>
                         <input 
+                        autoComplete='off'
                         name="webster-email-password"
                         type="password" 
                         className="grow" 
