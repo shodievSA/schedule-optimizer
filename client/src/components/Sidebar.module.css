@@ -1,0 +1,35 @@
+.sidebar__nav--link:link,
+.sidebar__nav--link:visited {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+
+  color: #9ca3af;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 0.8rem 1.6rem;
+  transition: all 0.3s;
+}
+
+.sidebar__nav--link:active,
+.sidebar__nav--link:hover,
+.sidebar__nav--link.active:link,
+.sidebar__nav--link.active:visited {
+  color: #1f2937;
+  background-color: #f9fafb;
+  border-radius: 5px;
+}
+
+.sidebar__nav--link svg {
+  width: 1.8rem;
+  height: 1.8rem;
+  color: #9ca3af;
+  transition: all 0.3s;
+}
+
+.sidebar__nav--link:active svg,
+.sidebar__nav--link:hover svg,
+.sidebar__nav--link.active:link svg,
+.sidebar__nav--link.active:visited svg {
+  color: #4b5563;
+}
