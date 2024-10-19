@@ -8,7 +8,7 @@ function Registration() {
 
     async function handleLogIn(e) {
 
-        e.preventDefault();
+        e.preventDefault()
 
         const formData = new FormData(e.target);
 
@@ -29,7 +29,7 @@ function Registration() {
 
         if (res.ok) {
 
-            navigate("/", { replace: true });
+            navigate("/dashboard", { replace: true });
 
         }
 
@@ -96,7 +96,6 @@ function Registration() {
             </div>
         </div>
     );
-
 }
 
-export default Registration;
+export default Registration

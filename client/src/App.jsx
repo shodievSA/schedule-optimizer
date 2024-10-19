@@ -1,21 +1,29 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // export
-import Registration from './pages/Registration'; // export default
-
-function HomePage() {
-    return (
-        <h1>This is Home Page</h1>
-    )
-}
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom" 
+import Registration from "./pages/Registration"
+import Dashboard from "./pages/Dashboard"
+import AppLayout from "./components/AppLayout"
+import Courses from "./pages/Courses"
+import Instructors from "./pages/Instructors"
+import Course from "./pages/Course"
 
 function App() {
     return (
         <Router>
             <Routes>
-                <Route path='/registration' element={<Registration />} />
-                <Route path='/' element={<HomePage />} />
+              <Route element={<AppLayout />}>
+                  <Route path="/dashboard" element={<Dashboard />} />
+                  <Route path="/courses" element={<Courses />} />
+                  <Route path="/courses/:courseId" element={<Course />} />
+                  <Route path="/instructors" element={<Instructors />} />
+              </Route>
+              <Route path="/registration" element={<Registration />}></Route>
             </Routes>
         </Router>
-    )
+    );
 }
 
-export default App
+export default App;
