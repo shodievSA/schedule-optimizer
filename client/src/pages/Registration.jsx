@@ -1,15 +1,37 @@
+import { useNavigate } from 'react-router-dom';
 import { TypeAnimation } from 'react-type-animation';
 import styles from "./Registration.module.css"
 
 function Registration() {
 
-    function handleLogIn(e) {
+    const navigate = useNavigate();
+
+    async function handleLogIn(e) {
 
         e.preventDefault();
 
         const formData = new FormData(e.target);
 
-        console.log(formData)
+        let formObject = {};
+        formData.forEach((value, key) => {
+            
+            formObject[key] = value;
+
+        });
+
+        let res = await fetch("http://localhost:3000/api/v1/login-user", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(formObject)
+        });
+
+        if (res.ok) {
+
+            navigate("/", { replace: true });
+
+        }
 
     }
 

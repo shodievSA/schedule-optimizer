@@ -1,18 +1,12 @@
-const express = require("express")
-const morgan = require("morgan")
+const express = require("express");
+const path = require("path");
 
-const app = express()
+const app = express();
 
-// Middlewares
-if (process.env.NODE_ENV === "developement") {
-  app.use(morgan("dev"))
-}
+app.use("/assets", express.static(
+    path.join(__dirname, "../client/dist/assets")
+));
 
-app.use(express.json())
+app.use(express.json());
 
-app.use((req, res, next) => {
-  console.log("Hello from the middleware!")
-  next()
-})
-
-module.exports = app
+module.exports = app;
