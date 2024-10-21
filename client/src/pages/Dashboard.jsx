@@ -1,7 +1,23 @@
-import { useNavigate } from "react-router-dom"
+import { useEffect, useState } from "react"
 
 function Dashboard() {
-  const navigate = useNavigate()
+  const [courses, setCourses] = useState()
+
+  useEffect(() => {
+    async function getStudents() {
+      try {
+        const res = await fetch("https://localhost:3000/api/v1/user-courses")
+        const data = await res.json()
+
+        setCourses(data)
+        return data
+      } catch (err) {
+        console.error(err)
+      }
+    }
+
+    getStudents()
+  }, [])
 
   return (
     <div className="overflow-x-auto">
@@ -20,102 +36,20 @@ function Dashboard() {
             <th></th>
           </tr>
         </thead>
+
         <tbody>
-          {/* row 1 */}
-          <tr>
-            <td className="text-center">COSC 1550</td>
-            <td className="text-center">1T</td>
-            <td className="text-center">Computer Programming I</td>
-            <td className="text-center">Yogesh Kakde</td>
-            <td className="text-center">3.00</td>
-            <td className="text-center">IP</td>
-            <td className="text-center">TASH</td>
-            <td className="text-center">FA</td>
-            <th>
-              <button
-                className="btn btn-bg-ghost btn-xs"
-                onClick={() => navigate(`/courses/${"1"}`)}
-              >
-                details
-              </button>
-            </th>
-          </tr>
-          {/* row 2 */}
-          <tr>
-            <td className="text-center">MATH 1430</td>
-            <td className="text-center">9S</td>
-            <td className="text-center">College Algebra</td>
-            <td className="text-center">Urinboeva</td>
-            <td className="text-center">3.00</td>
-            <td className="text-center">IP</td>
-            <td className="text-center">TASH</td>
-            <td className="text-center">FA</td>
-            <th>
-              <button
-                className="btn btn-bg-ghost btn-xs"
-                onClick={() => navigate(`/courses/${"2"}`)}
-              >
-                details
-              </button>
-            </th>
-          </tr>
-          {/* row 3 */}
-          <tr>
-            <td className="text-center">GLBC 1200</td>
-            <td className="text-center">7U</td>
-            <td className="text-center">Global Cornerstone Seminar</td>
-            <td className="text-center">Kachin Vladimir</td>
-            <td className="text-center">3.00</td>
-            <td className="text-center">IP</td>
-            <td className="text-center">TASH</td>
-            <td className="text-center">FA</td>
-            <th>
-              <button
-                className="btn btn-bg-ghost btn-xs"
-                onClick={() => navigate(`/courses/${"3"}`)}
-              >
-                details
-              </button>
-            </th>
-          </tr>
-          {/* row 4 */}
-          <tr>
-            <td className="text-center">PHIL 2110</td>
-            <td className="text-center">8U</td>
-            <td className="text-center">Introduction to Ethics</td>
-            <td className="text-center">Ashirova Janna</td>
-            <td className="text-center">3.00</td>
-            <td className="text-center">IP</td>
-            <td className="text-center">TASH</td>
-            <td className="text-center">FA</td>
-            <th>
-              <button
-                className="btn btn-bg-ghost btn-xs"
-                onClick={() => navigate(`/courses/${"4"}`)}
-              >
-                details
-              </button>
-            </th>
-          </tr>
-          {/* row 5 */}
-          <tr>
-            <td className="text-center">EDEX 1500</td>
-            <td className="text-center">8U</td>
-            <td className="text-center">Webster 101</td>
-            <td className="text-center">Adkhamova Khilola</td>
-            <td className="text-center">1.00</td>
-            <td className="text-center">A</td>
-            <td className="text-center">TASH</td>
-            <td className="text-center">F1</td>
-            <th>
-              <button
-                className="btn btn-bg-ghost btn-xs"
-                onClick={() => navigate(`/courses/${"5"}`)}
-              >
-                details
-              </button>
-            </th>
-          </tr>
+          {courses?.map((course) => {
+            return (
+              <tr key={course.course_id}>
+                <td>{course.course}</td>
+                <td>{course.section}</td>
+                <td>{course.title}</td>
+                <td>{course.instructor}</td>
+                <td>{course.credit_hours}</td>
+                <td>{course.term}</td>
+              </tr>
+            )
+          })}
         </tbody>
       </table>
     </div>
