@@ -5,11 +5,11 @@
   @apply text-4xl font-medium text-center;
 }
 .table-header > tr > th {
-  @apply p-5 text-lg font-medium text-center text-white bg-primary;
+  @apply bg-primary p-5 text-lg font-medium text-white text-center;
 }
 .table-body > tr > td {
-  @apply px-8 py-8 text-base font-medium text-center;
+  @apply py-8 px-8 text-base text-center font-medium;
 }
 .table-body > tr {
-  @apply cursor-pointer hover:bg-slate-200;
+  @apply hover:bg-slate-200 cursor-pointer;
 }
