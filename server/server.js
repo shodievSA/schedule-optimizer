@@ -134,6 +134,8 @@ app.post('/api/v1/new-course', async (req, res) => {
         { where: { student_email: studentEmail }}
     );
 
+    res.sendStatus(200)
+
 });
 
 app.get("*", async (req, res) => {
