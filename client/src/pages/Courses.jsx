@@ -31,18 +31,24 @@ function Courses() {
         days, 
         times, 
         course_description, 
-        course_name,
+        course,
+        title,
+        term,
+        section,
         credit_hours
     ) {
 
         navigate(`/courses/${courseId}`, {
             state: { 
-                course_name: course_name, 
-                course_description: course_description, 
-                instructor: instructor,
-                days: days,
-                times: times,
-                credit_hours: credit_hours
+                course, 
+                course_description, 
+                instructor,
+                days,
+                times,
+                credit_hours,
+                title,
+                term,
+                section,
             }
         });
 
@@ -55,7 +61,7 @@ function Courses() {
                 <table className="table">
                     <thead className={styles['table-header']}>
                         <tr>
-                            <th>Course Name</th>
+                            <th>Title</th>
                             <th>Instructor</th>
                             <th>Days</th>
                             <th>Times</th>
@@ -75,12 +81,15 @@ function Courses() {
                                             course['days'],
                                             course['times'],
                                             course['course_description'],
-                                            course['course_name'],
+                                            course['course'],
+                                            course['title'],
+                                            course['term'],
+                                            course['section'],
                                             course['credit_hours']
                                         )}
                                         >
                                             <td>
-                                                { course['course_name'] }
+                                                { course['title'] }
                                             </td>
                                             <td>
                                                 { course['instructor'] }

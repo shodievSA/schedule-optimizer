@@ -56,7 +56,18 @@ app.get(
     async (req, res) => {
 
         const courses = await Courses.findAll({
-            attributes: ['course_name', 'instructor', 'days', 'times', 'credit_hours', 'course_description', 'course_id']
+            attributes: [
+                'course', 
+                'title', 
+                'term', 
+                'section', 
+                'instructor', 
+                'days', 
+                'times', 
+                'credit_hours', 
+                'course_description', 
+                'course_id'
+            ]
         });
 
         res.json({ data: courses });
