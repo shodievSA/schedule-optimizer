@@ -14,7 +14,16 @@ const sequelize = new Sequelize(
 const Courses = sequelize.define(
     "university_courses",
     {
-        course_name: {
+        course: {
+            type: DataTypes.TEXT
+        },
+        title: {
+            type: DataTypes.TEXT
+        },
+        term: {
+            type: DataTypes.TEXT
+        },
+        section: {
             type: DataTypes.TEXT
         },
         instructor: {

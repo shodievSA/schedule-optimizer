@@ -277,21 +277,24 @@ let university_courses = [
     }
 ];
 
-// for (let i = 0; i < university_courses.length; i++)
-// {
-//     courses.create({
-//         course_name: university_courses[i].course_name,
-//         instructor: university_courses[i].instructor,
-//         days: university_courses[i].days,
-//         times: university_courses[i].times,
-//         credit_hours: university_courses[i].credit_hours,
-//         course_description: university_courses[i].course_description
-//     });
-// }
+for (let i = 0; i < university_courses.length; i++)
+{
+    courses.create({
+        course: university_courses[i].course,
+        title: university_courses[i].title,
+        term: university_courses[i].term,
+        section: university_courses[i].section,
+        instructor: university_courses[i].instructor,
+        days: university_courses[i].days,
+        times: university_courses[i].times,
+        credit_hours: university_courses[i].credit_hours,
+        course_description: university_courses[i].course_description
+    });
+}
 
-student.create({
-    student_email: "abbosshodiev@webster.edu",
-    student_email_password: "Abbos2504",
-    student_courses: student_courses,
-    student_name: "Abbos Shodiev"
-});
+// student.create({
+//     student_email: "abbosshodiev@webster.edu",
+//     student_email_password: "Abbos2504",
+//     student_courses: student_courses,
+//     student_name: "Abbos Shodiev"
+// });
