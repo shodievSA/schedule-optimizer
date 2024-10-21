@@ -51,21 +51,6 @@ app.get("/registration", (req, res) => {
 app.get("/api/v1/available-university-courses", async (req, res) => {
   const courses = await Courses.findAll({
     attributes: [
-      "course_name",
-      "instructor",
-      "days",
-      "times",
-      "credit_hours",
-      "course_description",
-      "course_id",
-    ],
-  })
-
-  res.json({ data: courses })
-})
-app.get("/api/v1/available-university-courses", async (req, res) => {
-  const courses = await Courses.findAll({
-    attributes: [
       "course",
       "title",
       "term",
@@ -89,7 +74,7 @@ app.get("/api/v1/user-courses", async (req, res) => {
     where: { student_email: userEmail },
   })
 
-  console.log(studentCourses)
+  console.log(studentCourses.student_courses)
 
   res.json({ data: studentCourses })
 })
@@ -112,11 +97,14 @@ app.post("/api/v1/new-course", async (req, res) => {
   const {
     course_id,
     instructor,
-    course_name,
+    course,
     course_description,
     days,
     times,
     credit_hours,
+    title,
+    section,
+    term,
   } = req.body
 
   const studentEmail = req.session["student-email"]
@@ -129,13 +117,16 @@ app.post("/api/v1/new-course", async (req, res) => {
   const studentCourses = user["student_courses"] || []
 
   studentCourses.push({
-    course_name: course_name,
+    course: course,
     instructor: instructor,
     days: days,
     times: times,
     credit_hours: credit_hours,
     course_description: course_description,
     course_id: course_id,
+    title: title,
+    section: section,
+    term: term,
   })
 
   await Students.update(

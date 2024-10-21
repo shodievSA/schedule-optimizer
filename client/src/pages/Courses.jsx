@@ -28,26 +28,6 @@ function Courses() {
     days,
     times,
     course_description,
-    course_name,
-    credit_hours
-  ) {
-    navigate(`/courses/${courseId}`, {
-      state: {
-        course_name: course_name,
-        course_description: course_description,
-        instructor: instructor,
-        days: days,
-        times: times,
-        credit_hours: credit_hours,
-      },
-    })
-  }
-  function handleRedirection(
-    courseId,
-    instructor,
-    days,
-    times,
-    course_description,
     course,
     title,
     term,

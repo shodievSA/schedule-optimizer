@@ -11,6 +11,8 @@ function Dashboard() {
 
         console.log(data)
 
+        console.log(data.data["student_courses"])
+
         setCourses(data.data["student_courses"])
       } catch (err) {
         console.error(err)
