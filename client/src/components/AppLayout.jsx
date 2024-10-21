@@ -6,7 +6,7 @@ function AppLayout() {
   return (
     <div className="grid grid-cols-[15rem_1fr] h-screen">
       <Sidebar />
-      <main className="p-10">
+      <main className="px-20 py-16">
         <Container>
           <Outlet />
         </Container>

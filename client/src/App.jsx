@@ -1,7 +1,8 @@
 import {
   BrowserRouter as Router,
   Routes,
-  Route
+  Route,
+  Navigate
 } from "react-router-dom" 
 import Registration from "./pages/Registration"
 import Dashboard from "./pages/Dashboard"
@@ -15,6 +16,7 @@ function App() {
         <Router>
             <Routes>
               <Route element={<AppLayout />}>
+                  <Route index element={<Navigate replace to="/dashboard" />} />
                   <Route path="/dashboard" element={<Dashboard />} />
                   <Route path="/courses" element={<Courses />} />
                   <Route path="/courses/:courseId" element={<Course />} />

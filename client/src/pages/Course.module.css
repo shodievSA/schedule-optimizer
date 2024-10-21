@@ -1,0 +1,41 @@
+@media (min-width: 1440px) {
+    .page-container {
+        @apply flex flex-col h-full
+    }
+    .page-container > div:first-child {
+        @apply flex items-center gap-x-16
+    }
+    .instructor-details {
+        @apply flex flex-col items-center gap-y-4
+    }
+    .instructor-details > h1 {
+        @apply font-medium text-lg
+    }
+    .image-container {
+        width: 300px;
+        height: 350px;
+    }
+    .instructor-image {
+        width: 300px;
+        height: 350px;
+        object-fit: cover;
+    }
+    .instructor-image {
+        @apply rounded-md
+    }
+    .course-description {
+        @apply flex flex-col gap-y-5
+    }
+    .course-description h1 {
+        @apply text-center text-2xl font-medium
+    }
+    .course-description p {
+        @apply text-xl
+    }
+    .course-schedule {
+        @apply flex grow items-center justify-center text-xl gap-x-5
+    }
+    .join-course-button {
+        @apply btn w-8/12 btn-secondary btn-lg mt-auto self-center shadow-md
+    }
+}

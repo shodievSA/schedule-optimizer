@@ -1,0 +1,17 @@
+@media (min-width: 1400px) {
+    .page-container {
+        @apply flex flex-col gap-y-10
+    }
+    .page-container h1 {
+        @apply text-4xl font-medium text-center
+    }
+    .table-header > tr > th {
+        @apply bg-primary p-5 text-lg font-medium text-white text-center
+    }
+    .table-body > tr > td {
+        @apply py-8 px-8 text-base text-center font-medium
+    }
+    .table-body > tr {
+        @apply hover:bg-slate-200 cursor-pointer
+    }
+}
