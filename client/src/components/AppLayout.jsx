@@ -4,9 +4,9 @@ import Sidebar from "./Sidebar"
 
 function AppLayout() {
   return (
-    <div className="grid grid-cols-[15rem_1fr] h-screen">
+    <div className="grid grid-cols-[15rem_1fr] h-full">
       <Sidebar />
-      <main className="px-20 py-16">
+      <main className="px-20 py-12">
         <Container>
           <Outlet />
         </Container>
