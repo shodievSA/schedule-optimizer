@@ -63,6 +63,24 @@ app.get("/api/v1/available-university-courses", async (req, res) => {
 
   res.json({ data: courses })
 })
+app.get("/api/v1/available-university-courses", async (req, res) => {
+  const courses = await Courses.findAll({
+    attributes: [
+      "course",
+      "title",
+      "term",
+      "section",
+      "instructor",
+      "days",
+      "times",
+      "credit_hours",
+      "course_description",
+      "course_id",
+    ],
+  })
+
+  res.json({ data: courses })
+})
 
 app.get("/api/v1/user-courses", async (req, res) => {
   const userEmail = req.session["student-email"]

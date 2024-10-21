@@ -42,6 +42,32 @@ function Courses() {
       },
     })
   }
+  function handleRedirection(
+    courseId,
+    instructor,
+    days,
+    times,
+    course_description,
+    course,
+    title,
+    term,
+    section,
+    credit_hours
+  ) {
+    navigate(`/courses/${courseId}`, {
+      state: {
+        course,
+        course_description,
+        instructor,
+        days,
+        times,
+        credit_hours,
+        title,
+        term,
+        section,
+      },
+    })
+  }
 
   return (
     <div className={styles["page-container"]}>
@@ -70,12 +96,15 @@ function Courses() {
                           course["days"],
                           course["times"],
                           course["course_description"],
-                          course["course_name"],
+                          course["course"],
+                          course["title"],
+                          course["term"],
+                          course["section"],
                           course["credit_hours"]
                         )
                       }
                     >
-                      <td>{course["course_name"]}</td>
+                      <td>{course["title"]}</td>
                       <td>{course["instructor"]}</td>
                       <td>{course["days"]}</td>
                       <td>{course["times"]}</td>
