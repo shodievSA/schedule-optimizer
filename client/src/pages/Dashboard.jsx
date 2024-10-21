@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react"
 
 function Dashboard() {
-  const [courses, setCourses] = useState()
+  const [courses, setCourses] = useState([])
 
   useEffect(() => {
     async function getStudents() {
       try {
-        const res = await fetch("https://localhost:3000/api/v1/user-courses")
+        const res = await fetch("http://localhost:3000/api/v1/user-courses")
         const data = await res.json()
 
-        setCourses(data)
-        return data
+        console.log(data)
+
+        setCourses(data.data["student_courses"])
       } catch (err) {
         console.error(err)
       }
@@ -30,26 +31,27 @@ function Dashboard() {
             <th>Title</th>
             <th>Instructor</th>
             <th>Hours</th>
-            <th>Grade</th>
-            <th>Campus</th>
             <th>Term</th>
-            <th></th>
           </tr>
         </thead>
 
         <tbody>
-          {courses?.map((course) => {
-            return (
-              <tr key={course.course_id}>
-                <td>{course.course}</td>
-                <td>{course.section}</td>
-                <td>{course.title}</td>
-                <td>{course.instructor}</td>
-                <td>{course.credit_hours}</td>
-                <td>{course.term}</td>
-              </tr>
-            )
-          })}
+          {courses.length > 0 ? (
+            courses.map((course) => {
+              return (
+                <tr key={course.course_id}>
+                  <td>{course.course}</td>
+                  <td>{course.section}</td>
+                  <td>{course.title}</td>
+                  <td>{course.instructor}</td>
+                  <td>{course.credit_hours}</td>
+                  <td>{course.term}</td>
+                </tr>
+              )
+            })
+          ) : (
+            <div>No courses yet</div>
+          )}
         </tbody>
       </table>
     </div>
