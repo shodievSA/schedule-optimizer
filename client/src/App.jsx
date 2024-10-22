@@ -10,6 +10,7 @@ import AppLayout from "./components/AppLayout"
 import Courses from "./pages/Courses"
 import Instructors from "./pages/Instructors"
 import Course from "./pages/Course"
+import UserCourse from "./pages/UserCourse"
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                   <Route path="/dashboard" element={<Dashboard />} />
                   <Route path="/courses" element={<Courses />} />
                   <Route path="/courses/:courseId" element={<Course />} />
+                  <Route path="/user-course/:courseId" element={<UserCourse />} />
                   <Route path="/instructors" element={<Instructors />} />
               </Route>
               <Route path="/registration" element={<Registration />}></Route>

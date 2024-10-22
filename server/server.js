@@ -137,6 +137,40 @@ app.post("/api/v1/new-course", async (req, res) => {
   res.sendStatus(200)
 })
 
+app.post("/api/v1/delete-user-course", async (req, res) => {
+
+    const { courseId, userEmail, emailPassword } = req.body;
+
+    let isAuthorized = await verifyStudentCredentials(userEmail, emailPassword);
+
+    if (isAuthorized) {
+
+        const user = await Students.findOne({
+            where: { student_email: userEmail },
+            attributes: ["student_courses"],
+        });
+
+        let studentCourses = user["student_courses"] || [];
+
+        studentCourses = studentCourses.filter((course) => {
+
+            if (course.course_id !== courseId) {
+                return course
+            }
+
+        });
+
+        await Students.update(
+            { student_courses: studentCourses },
+            { where: { student_email: userEmail } }
+        )
+      
+        res.sendStatus(200);
+
+    }
+
+});
+
 app.get("*", async (req, res) => {
   if (req.session["student-email"]) {
     const filePath = path.join(__dirname, "../client/dist/index.html")
