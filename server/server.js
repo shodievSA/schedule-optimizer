@@ -171,6 +171,20 @@ app.post("/api/v1/delete-user-course", async (req, res) => {
 
 });
 
+app.get("/api/v1/logout-user", async (req, res) => {
+
+    req.session.destroy((err) => {
+      if (err) {
+          return res.status(500).send('Unable to log out.');
+      }
+
+    res.clearCookie('connect.sid');
+    res.sendStatus(200);
+    
+});
+
+});
+
 app.get("*", async (req, res) => {
   if (req.session["student-email"]) {
     const filePath = path.join(__dirname, "../client/dist/index.html")

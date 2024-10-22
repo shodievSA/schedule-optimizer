@@ -2,18 +2,17 @@
   display: flex;
   align-items: center;
   gap: 1.2rem;
-  color: #9ca3af;
+  color: #919293;
   font-size: 1.2rem;
   font-weight: 500;
   padding: 0.8rem 1.6rem;
   transition: all 0.3s;
+  border-radius: 6px;
 }
 
 .sidebar__nav--link:hover,
 .sidebar__nav--link.active {
-  color: #1f2937;
-  background-color: #f9fafb;
-  border-radius: 5px;
+    @apply bg-neutral rounded-md text-white
 }
 
 .sidebar__nav--link svg {
@@ -25,5 +24,5 @@
 
 .sidebar__nav--link:hover svg,
 .sidebar__nav--link.active svg {
-  color: #4b5563;
+  @apply text-white
 }

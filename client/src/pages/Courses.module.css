@@ -1,11 +1,11 @@
 .page-container {
-  @apply flex flex-col gap-y-10;
+  @apply flex flex-col gap-y-12 pt-2;
 }
 .page-container h1 {
-  @apply text-4xl font-medium text-center;
+  @apply text-3xl font-semibold;
 }
 .table-header > tr > th {
-  @apply bg-primary p-5 text-lg font-medium text-white text-center;
+  @apply bg-neutral p-6 text-lg font-medium text-white text-center;
 }
 .table-body > tr > td {
   @apply py-8 px-8 text-base text-center font-medium;

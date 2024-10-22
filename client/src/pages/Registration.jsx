@@ -91,7 +91,7 @@ function Registration() {
                         placeholder="Email Password" 
                         />
                     </label>
-                    <button className="btn btn-lg btn-primary btn-wide text-xl">Log In</button>
+                    <button className="btn btn-lg btn-neutral btn-wide text-xl">Log In</button>
                 </form>
             </div>
         </div>

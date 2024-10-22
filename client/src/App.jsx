@@ -11,6 +11,7 @@ import Courses from "./pages/Courses"
 import Instructors from "./pages/Instructors"
 import Course from "./pages/Course"
 import UserCourse from "./pages/UserCourse"
+import Logout from "./pages/Logout"
 
 function App() {
     return (
@@ -23,6 +24,7 @@ function App() {
                   <Route path="/courses/:courseId" element={<Course />} />
                   <Route path="/user-course/:courseId" element={<UserCourse />} />
                   <Route path="/instructors" element={<Instructors />} />
+                  <Route path="/logout" element={<Logout />}></Route>
               </Route>
               <Route path="/registration" element={<Registration />}></Route>
             </Routes>
