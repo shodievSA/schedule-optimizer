@@ -12,7 +12,7 @@ function Sidebar() {
     <div className="flex flex-col gap-8 px-5 fixed top-0 left-0 h-screen w-[15rem] py-4 border-r border-gray-200">
       <img src="/assets/logo.png" alt="Webster Logo" />
       <nav className="grow">
-        <ul className="flex flex-col gap-6 h-full">
+        <ul className="flex flex-col h-full gap-6">
           <li>
             <NavLink
               to="/dashboard"
@@ -52,7 +52,20 @@ function Sidebar() {
               <span>Instructors</span>
             </NavLink>
           </li>
-          <li className="mt-auto pb-6">
+          <li>
+            <NavLink
+              to="/assistant"
+              className={({ isActive }) =>
+                isActive
+                  ? `${styles["sidebar__nav--link"]} ${styles["active"]}`
+                  : styles["sidebar__nav--link"]
+              }
+            >
+              <HiOutlineAcademicCap />
+              <span>Assistant</span>
+            </NavLink>
+          </li>
+          <li className="pb-6 mt-auto">
             <NavLink
               to="/logout"
               className={({ isActive }) =>
