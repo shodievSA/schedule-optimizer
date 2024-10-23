@@ -1,5 +1,5 @@
 .page-container {
-    @apply flex flex-col h-full;
+    @apply flex flex-col h-full overflow-y-hidden;
   }
 .page-container > div:first-child {
     @apply flex items-center gap-x-16;
@@ -12,11 +12,11 @@
 }
 .image-container {
     width: 300px;
-    height: 350px;
+    height: 300px;
 }
 .instructor-image {
     width: 300px;
-    height: 350px;
+    height: 300px;
     object-fit: cover;
 }
 .instructor-image {
@@ -35,8 +35,14 @@
     @apply flex grow items-center justify-center text-xl gap-x-5;
 }
 .withdraw-course-button {
-    @apply btn btn-error w-8/12 alert-error btn-lg mt-auto self-center shadow-md text-white;
+    @apply btn btn-neutral w-8/12 alert-error btn-lg mt-auto self-center shadow-md text-white;
 }
 .user-credentials {
     @apply flex flex-col gap-y-5 mt-4
+}
+.modal-window {
+    @apply modal
+}
+.modal-window {
+    overflow-y: hidden !important;
 }

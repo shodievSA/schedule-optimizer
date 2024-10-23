@@ -8,6 +8,7 @@ const path = require("path")
 const app = require("./app")
 const Courses = require("./db/models/courses.js")
 const Students = require("./db/models/students.js")
+const sendPrompt = require("./utils/sendPrompt.js")
 
 const sequelize = new Sequelize(
   process.env.DB_NAME,
@@ -171,6 +172,15 @@ app.post("/api/v1/delete-user-course", async (req, res) => {
 
 });
 
+app.post("/api/v1/student-prompt", async (req, res) => {
+
+    const prompt = req.body['prompt'];
+    const gptResponse = await sendPrompt(prompt);
+
+    res.json({ data: gptResponse });
+
+});
+
 app.get("/api/v1/logout-user", async (req, res) => {
 
     req.session.destroy((err) => {
@@ -181,7 +191,7 @@ app.get("/api/v1/logout-user", async (req, res) => {
     res.clearCookie('connect.sid');
     res.sendStatus(200);
     
-});
+  });
 
 });
 

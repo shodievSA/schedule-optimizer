@@ -81,7 +81,7 @@ export default function UserCourse() {
             >
                 Withdraw Course
             </button>
-            <dialog className="modal" ref={modalRef}>
+            <dialog className={styles['modal-window']} ref={modalRef}>
                 <div className="modal-box p-8">
                     {
                         withdrawConfirmed ? (
@@ -144,14 +144,14 @@ export default function UserCourse() {
                             <>
                                 <form method="dialog">
                                     <button 
-                                    className="btn btn-md btn-circle btn-ghost absolute right-4 top-4"
+                                    className="btn btn-md btn-circle btn-ghost absolute right-4 top-4 text-xl"
                                     onClick={() => setWithdrawConfirmed(false)}
                                     >✕</button>
                                 </form>
-                                <h3 className="font-bold text-xl">Important!</h3>
-                                <p className="py-4 text-lg">
+                                <h3 className="font-bold text-2xl">Important!</h3>
+                                <p className="py-4 text-xl">
                                     Are you sure you want to withdraw this course? Keep in mind
-                                    that you will not be able to take this course once you
+                                    that you <b>will not</b> be able to take this course once you
                                     withdraw it.
                                 </p>
                                 <div className="modal-action">

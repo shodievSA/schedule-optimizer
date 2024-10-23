@@ -49,7 +49,11 @@ function Course() {
 
   return (
     <div className={styles["page-container"]}>
-      <div>
+      <div className="flex justify-between items-center">
+        <h1 className="text-3xl font-semibold">{course}</h1>
+        <h1 className="text-2xl font-semibold">{days}, {times}</h1>
+      </div>
+      <div className="flex gap-x-16 pt-14">
         <div className={styles["instructor-details"]}>
           <div className={styles["image-container"]}>
             <img
@@ -61,17 +65,9 @@ function Course() {
           <h1>{instructor}</h1>
         </div>
         <div className={styles["course-description"]}>
-          <h1>{course}</h1>
+          <h1>About the course:</h1>
           <p>{course_description}</p>
         </div>
-      </div>
-      <div className={styles["course-schedule"]}>
-        <h1>
-          Days: <b>{days}</b>
-        </h1>
-        <h1>
-          Times: <b>{times}</b>
-        </h1>
       </div>
       <button className={styles["join-course-button"]} onClick={addNewCourse}>
         Join Course
