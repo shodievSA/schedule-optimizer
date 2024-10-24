@@ -4,7 +4,8 @@ import {
   HiOutlineBookmark,
   HiOutlineHome,
 } from "react-icons/hi"
-import { IoExitOutline } from "react-icons/io5";
+import { IoExitOutline } from "react-icons/io5"
+import { RiRobot2Line } from "react-icons/ri"
 import styles from "./Sidebar.module.css"
 
 function Sidebar() {
@@ -61,7 +62,7 @@ function Sidebar() {
                   : styles["sidebar__nav--link"]
               }
             >
-              <HiOutlineAcademicCap />
+              <RiRobot2Line />
               <span>Assistant</span>
             </NavLink>
           </li>

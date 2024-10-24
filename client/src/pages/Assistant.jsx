@@ -8,6 +8,8 @@ function Assistant() {
   async function sendPrompt(e) {
     e.preventDefault()
 
+    setPrompt("")
+
     setMessages((prevMessages) => [
       ...prevMessages,
       { type: "user", text: prompt },
@@ -32,39 +34,44 @@ function Assistant() {
         ...prevMessages,
         { type: "assistant", text: data.data },
       ])
-
-      setPrompt("")
     } catch (err) {
       console.error(err)
     }
   }
 
   return (
-    <div>
-      <div className="chat-bubble">
+    <div className="relative h-[calc(100vh-48px)]">
+      <div className="flex flex-col items-center w-full gap-4 p-4 mx-auto bg-white chat-bubble">
         {messages.map((msg, index) => (
           <div
             key={index}
-            className={msg.type === "user" ? "text-blue-500" : "text-green-500"}
+            className={
+              msg.type === "user"
+                ? "text-right self-end  rounded-md p-3 bg-[#f4f4f4] text-black"
+                : "text-left self-start rounded-md p-3 bg-[#f4f4f4] text-black"
+            }
           >
-            {msg.type === "user" ? "You: " : "Assistant: "}
+            {/* {msg.type === "user" ? "You: " : "Assistant: "} */}
             {msg.text}
           </div>
         ))}
       </div>
 
-      <form action="" onSubmit={sendPrompt}>
-        <input
-          className="flex items-center gap-2 input input-bordered"
-          type="text"
-          value={prompt}
-          onChange={(e) => setPrompt(e.target.value)}
-        />
+      <div className="absolute left-0 w-full pb-4 bottom-6 chat-footer">
+        <form action="" onSubmit={sendPrompt} className="relative flex w-full">
+          <input
+            className="flex items-center w-full gap-2 py-8 rounded-lg left-6 input input-bordered"
+            type="text"
+            value={prompt}
+            placeholder="Do you need help regarding your schedule?"
+            onChange={(e) => setPrompt(e.target.value)}
+          />
 
-        <button className="absolute btn btn-md btn-circle btn-ghost right-4 top-4">
-          Send
-        </button>
-      </form>
+          <button className="absolute rounded-lg right-3 top-[10px] btn btn-circle btn-ghost">
+            Send
+          </button>
+        </form>
+      </div>
     </div>
   )
 }
