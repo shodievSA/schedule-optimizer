@@ -38,7 +38,7 @@
     @apply btn btn-neutral w-8/12 alert-error btn-lg mt-auto self-center shadow-md text-white;
 }
 .user-credentials {
-    @apply flex flex-col gap-y-5 mt-4
+    @apply flex flex-col gap-y-5 mt-8
 }
 .modal-window {
     @apply modal

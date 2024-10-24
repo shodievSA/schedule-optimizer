@@ -54,7 +54,7 @@ function Dashboard() {
   }
 
   return (
-    <div className="overflow-x-auto flex flex-col gap-y-12">
+    <div className="overflow-x-auto flex flex-col gap-y-12 pb-12">
       <h1 className="text-3xl font-semibold whitespace-pre">
           {
               studentName !== "" ? (

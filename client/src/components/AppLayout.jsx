@@ -6,7 +6,7 @@ function AppLayout() {
   return (
     <div className="flex h-full">
       <Sidebar />
-      <main className="ml-[15rem] w-[calc(100%-15rem)] px-20 py-12">
+      <main className="ml-[15rem] w-[calc(100%-15rem)] px-20 py-12 h-full">
         <Container>
           <Outlet />
         </Container>

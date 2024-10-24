@@ -82,24 +82,24 @@ export default function UserCourse() {
                 Withdraw Course
             </button>
             <dialog className={styles['modal-window']} ref={modalRef}>
-                <div className="modal-box p-8">
+                <div className="modal-box p-10">
                     {
                         withdrawConfirmed ? (
                             <>
                                 <form method="dialog">
                                     <button 
-                                    className="btn btn-md btn-circle btn-ghost absolute right-4 top-4"
+                                    className="btn btn-circle btn-ghost absolute right-4 top-4 text-xl"
                                     onClick={() => setWithdrawConfirmed(false)}
                                     >✕</button>
                                 </form>
-                                <h3 className="font-bold text-lg">Please prove your identity</h3>
+                                <h3 className="font-bold text-2xl">Please prove your identity</h3>
                                 <div className={styles['user-credentials']}>
-                                    <label className="input input-bordered flex items-center gap-2">
+                                    <label className="input input-lg input-bordered flex items-center gap-2">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             viewBox="0 0 16 16"
                                             fill="currentColor"
-                                            className="h-4 w-4 opacity-70">
+                                            className="h-6 w-6 opacity-70">
                                             <path
                                             d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
                                             <path
@@ -113,12 +113,12 @@ export default function UserCourse() {
                                         onChange={(e) => setUserEmail(e.target.value)}
                                         />
                                     </label>
-                                    <label className="input input-bordered flex items-center gap-2">
+                                    <label className="input input-lg input-bordered flex items-center gap-2">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             viewBox="0 0 16 16"
                                             fill="currentColor"
-                                            className="h-4 w-4 opacity-70">
+                                            className="h-6 w-6 opacity-70">
                                             <path
                                             fillRule="evenodd"
                                             d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z"
@@ -135,7 +135,7 @@ export default function UserCourse() {
                                 </div>
                                 <div className="modal-action">
                                     <button 
-                                    className="btn btn-md btn-neutral"
+                                    className="btn btn-lg btn-neutral w-full"
                                     onClick={withdrawCourse}
                                     >Confirm</button>
                                 </div>
@@ -144,19 +144,19 @@ export default function UserCourse() {
                             <>
                                 <form method="dialog">
                                     <button 
-                                    className="btn btn-md btn-circle btn-ghost absolute right-4 top-4 text-xl"
+                                    className="btn btn-circle btn-ghost absolute right-4 top-4 text-xl"
                                     onClick={() => setWithdrawConfirmed(false)}
                                     >✕</button>
                                 </form>
-                                <h3 className="font-bold text-2xl">Important!</h3>
-                                <p className="py-4 text-xl">
+                                <h3 className="font-bold text-3xl">Important!</h3>
+                                <p className="py-4 text-2xl">
                                     Are you sure you want to withdraw this course? Keep in mind
                                     that you <b>will not</b> be able to take this course once you
                                     withdraw it.
                                 </p>
                                 <div className="modal-action">
                                     <button 
-                                    className="btn btn-md btn-neutral"
+                                    className="btn btn-lg btn-neutral w-full"
                                     onClick={() => setWithdrawConfirmed(true)}
                                     >Withdraw</button>
                                 </div>
