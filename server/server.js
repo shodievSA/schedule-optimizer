@@ -62,6 +62,7 @@ app.get("/api/v1/available-university-courses", async (req, res) => {
       "credit_hours",
       "course_description",
       "course_id",
+      "student_feedbacks"
     ],
   })
 
@@ -69,74 +70,84 @@ app.get("/api/v1/available-university-courses", async (req, res) => {
 })
 
 app.get("/api/v1/user-courses", async (req, res) => {
-  const userEmail = req.session["student-email"]
 
-  const studentCourses = await Students.findOne({
-    where: { student_email: userEmail },
-  })
+    const student_email = req.session["student-email"];
+    const studentData = await Students.findOne({
+        where: { student_email: student_email },
+    });
+    res.json({ data: studentData });
 
-  console.log(studentCourses.student_courses)
+});
 
-  res.json({ data: studentCourses })
-})
+app.get("/api/v1/instructors", async (req, res) => {
+
+    
+
+});
 
 app.post("/api/v1/login-user", async (req, res) => {
-  const studentEmail = req.body["webster-email"]
-  const emailPassword = req.body["webster-email-password"]
 
-  let isAuthorized = await verifyStudentCredentials(studentEmail, emailPassword)
+    const studentEmail = req.body["webster-email"];
+    const emailPassword = req.body["webster-email-password"];
 
-  if (isAuthorized == true) {
-    req.session["student-email"] = studentEmail
-    res.sendStatus(200)
-  } else {
-    res.status(401).send("Unauthorized")
-  }
-})
+    let isAuthorized = await verifyStudentCredentials(
+      studentEmail, emailPassword
+    );
+
+    if (isAuthorized == true) {
+        req.session["student-email"] = studentEmail;
+        res.sendStatus(200);
+    } else {
+        res.status(401).send("Unauthorized");
+    }
+
+});
 
 app.post("/api/v1/new-course", async (req, res) => {
-  const {
-    course_id,
-    instructor,
-    course,
-    course_description,
-    days,
-    times,
-    credit_hours,
-    title,
-    section,
-    term,
-  } = req.body
 
-  const studentEmail = req.session["student-email"]
+    const {
+      course_id,
+      instructor,
+      course,
+      course_description,
+      days,
+      times,
+      credit_hours,
+      title,
+      section,
+      term
+    } = req.body;
 
-  const user = await Students.findOne({
-    where: { student_email: studentEmail },
-    attributes: ["student_courses"],
-  })
+    const studentEmail = req.session["student-email"];
 
-  const studentCourses = user["student_courses"] || []
+    const user = await Students.findOne({
+        where: { student_email: studentEmail },
+        attributes: ["student_courses"],
+    });
 
-  studentCourses.push({
-    course: course,
-    instructor: instructor,
-    days: days,
-    times: times,
-    credit_hours: credit_hours,
-    course_description: course_description,
-    course_id: course_id,
-    title: title,
-    section: section,
-    term: term,
-  })
+    const studentCourses = user["student_courses"] || []
 
-  await Students.update(
-    { student_courses: studentCourses },
-    { where: { student_email: studentEmail } }
-  )
+    studentCourses.push({
+        course: course,
+        instructor: instructor,
+        days: days,
+        times: times,
+        credit_hours: credit_hours,
+        course_description: course_description,
+        course_id: course_id,
+        title: title,
+        section: section,
+        term: term
+    });
 
-  res.sendStatus(200)
-})
+    await Students.update(
+        { student_courses: studentCourses },
+        { where: { student_email: studentEmail } }
+    );
+
+    res.sendStatus(200);
+
+});
 
 app.post("/api/v1/delete-user-course", async (req, res) => {
 
@@ -178,6 +189,74 @@ app.post("/api/v1/student-prompt", async (req, res) => {
     const gptResponse = await sendPrompt(prompt);
 
     res.json({ data: gptResponse });
+
+});
+
+app.post("/api/v1/courses/:courseID/student-feedback", async (req, res) => {
+
+    const studentEmail = req.session['student-email'];
+    const course_id = req.params['courseID'];
+    const { feedback, rating } = req.body;
+
+    let profanityRes = await fetch('https://vector.profanity.dev', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: feedback })
+    });
+    let data = await profanityRes.json();
+
+    if (data.isProfanity) {
+        res.json(
+            { message: "This feedback can't be submitted since it contains inappropriate language. " +
+                       "Modify your feedback and submit again." 
+            }
+        );
+    } else {
+
+        const studentData = await Students.findOne({
+            where: { student_email: studentEmail },
+            attributes: [
+                'student_name',
+                'student_status'
+            ]
+        });
+
+        const universityCoursesData = await Courses.findOne({
+            where: { course_id: Number(course_id) },
+            attributes: [
+                'student_feedbacks',
+            ]
+        });
+
+        universityCoursesData['student_feedbacks'].push({
+            student_name: studentData['student_name'],
+            student_status: studentData['student_status'],
+            student_feedback: feedback,
+            rating: Number(rating)
+        });
+
+        await Courses.update(
+          { student_feedbacks: universityCoursesData['student_feedbacks'] },
+          { where: { course_id: course_id } }
+      )
+
+        res.json(
+            { message: "Your feedback has been successfully submitted!" }
+        );
+    }
+
+});
+
+app.get('/api/v1/course-feedback/:courseID', async (req, res) => {
+
+    const course_id = req.params['courseID'];
+
+    const courseFeedbacks = await Courses.findOne({
+        where: { course_id: course_id },
+        attributes: ['student_feedbacks']
+    });
+
+    res.json({ data: courseFeedbacks });
 
 });
 

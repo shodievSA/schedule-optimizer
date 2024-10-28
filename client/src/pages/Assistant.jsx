@@ -1,14 +1,17 @@
 import { useState } from "react"
+import { TypeAnimation } from "react-type-animation"
 
 function Assistant() {
   const [prompt, setPrompt] = useState("")
   const [response, setResponse] = useState("")
   const [messages, setMessages] = useState([])
+  const [isLoading, setIsLoading] = useState(false);
 
   async function sendPrompt(e) {
-    e.preventDefault()
+    e.preventDefault();
 
-    setPrompt("")
+    setIsLoading(true);
+    setPrompt("");
 
     setMessages((prevMessages) => [
       ...prevMessages,
@@ -33,43 +36,80 @@ function Assistant() {
       setMessages((prevMessages) => [
         ...prevMessages,
         { type: "assistant", text: data.data },
-      ])
+      ]);
+      setIsLoading(false);
     } catch (err) {
       console.error(err)
     }
   }
 
   return (
-    <div className="relative h-[calc(100vh-48px)]">
-      <div className="flex flex-col items-center w-full gap-4 p-4 mx-auto bg-white chat-bubble">
-        {messages.map((msg, index) => (
-          <div
-            key={index}
-            className={
-              msg.type === "user"
-                ? "text-right self-end  rounded-md p-3 bg-[#f4f4f4] text-black"
-                : "text-left self-start rounded-md p-3 bg-[#f4f4f4] text-black"
-            }
-          >
-            {/* {msg.type === "user" ? "You: " : "Assistant: "} */}
-            {msg.text}
-          </div>
-        ))}
+    <div 
+    className="flex flex-col h-[calc(100vh-48px)] gap-y-8"
+    >
+      <div 
+      className="flex flex-col w-5/6 gap-4 p-8 mx-auto rounded-md grow overflow-y-auto"
+      >
+        {
+          messages.length > 0 ? (
+            messages.map((msg, index) => (
+              <div
+                key={index}
+                className={
+                  msg.type === "user"
+                    ? "text-black chat chat-end"
+                    : "text-black chat chat-start"
+                }
+              >
+                {/* {msg.type === "user" ? "You: " : "Assistant: "} */}
+                <div className={ msg.type === "user"
+                    ? "chat-bubble chat-bubble-primary"
+                    : "chat-bubble"
+                }>{msg.text}</div>
+              </div>
+            ))
+          ) : (
+            <div className="flex justify-center items-center grow p-12">
+              <h1 className="text-5xl font-semibold text-center leading-snug">
+                  <TypeAnimation
+                    sequence={
+                      [
+                      'Meet the first AI-powered Academic Advisor', 2000,
+                      'Have questions about your semester or schedule?', 2000,
+                      'Feel free to ask!', 2000
+                      ]
+                    }
+                    speed={30}
+                    omitDeletionAnimation={true}
+                    repeat={Infinity}
+                    cursor={false}
+                  />
+              </h1>
+            </div>
+          )
+        }
+        {
+            isLoading && (
+              <span className="loading loading-dots loading-lg"></span>
+            )
+        }
       </div>
 
-      <div className="absolute left-0 w-full pb-4 bottom-6 chat-footer">
-        <form action="" onSubmit={sendPrompt} className="relative flex w-full">
-          <input
-            className="flex items-center w-full gap-2 py-8 rounded-lg left-6 input input-bordered"
+      <div className="w-full pb-12 bottom-6 chat-footer flex justify-center">
+        <form 
+        onSubmit={sendPrompt} 
+        className="relative flex w-9/12"
+        >
+            <input
+            className="flex text-lg items-center w-full gap-2 py-8 rounded-lg input input-lg input-bordered"
             type="text"
             value={prompt}
             placeholder="Do you need help regarding your schedule?"
             onChange={(e) => setPrompt(e.target.value)}
-          />
-
-          <button className="absolute rounded-lg right-3 top-[10px] btn btn-circle btn-ghost">
-            Send
-          </button>
+            />
+            <button className="absolute rounded-lg right-3 top-[10px] btn btn-circle btn-ghost">
+              Send
+            </button>
         </form>
       </div>
     </div>

@@ -25,7 +25,7 @@ function Course() {
     credit_hours,
     title,
     section,
-    term,
+    term
   } = location.state
 
   async function addNewCourse() {
@@ -39,7 +39,7 @@ function Course() {
       term: term,
       course_description: course_description,
       course: course,
-      credit_hours: credit_hours,
+      credit_hours: credit_hours
     }
 
     let res = await fetch("http://localhost:3000/api/v1/new-course", {
@@ -60,7 +60,7 @@ function Course() {
       navigate(
         `/courses/${courseId}/students-feedback`,
         { state: { course } }
-      )
+      );
 
   }
 
@@ -73,12 +73,12 @@ function Course() {
             onClick={() => navigate(-1)}
             />
         </div>
-        <div className="flex gap-x-12">
-          <h1 className="text-3xl font-semibold">{course}</h1>
-          <h1 className="text-3xl font-semibold">{days}, {times}</h1>
+        <div className="flex gap-x-12 text-3xl font-semibold">
+          <h1>{course}</h1>
+          <h1>{days}, {times}</h1>
         </div>
         <button 
-        className="btn btn-lg btn-primary text-white" 
+        className="btn btn-lg btn-secondary text-white shadow-md" 
         onClick={handleRedirection}
         >
           Student Feedback
@@ -106,8 +106,11 @@ function Course() {
       >
         Join Course
       </button>
-      <dialog className={styles['modal-window']} ref={modalRef}>
-          <div className="modal-box p-10">
+      <dialog 
+      className={styles['modal-window']} 
+      ref={modalRef}
+      >
+          <div className="modal-box p-10 flex flex-col gap-y-4">
               {
                   withdrawConfirmed ? (
                       <>
@@ -117,7 +120,7 @@ function Course() {
                               onClick={() => setWithdrawConfirmed(false)}
                               >✕</button>
                           </form>
-                          <h3 className="font-bold text-2xl">Please prove your identity</h3>
+                          <h3 className="font-bold text-2xl text-center">Please prove your identity</h3>
                           <div className={styles['user-credentials']}>
                               <label className="input input-lg input-bordered flex items-center gap-2">
                                   <svg
@@ -160,7 +163,7 @@ function Course() {
                           </div>
                           <div className="modal-action">
                               <button 
-                              className="btn btn-lg btn-neutral w-full"
+                              className="btn btn-lg btn-secondary w-full text-white"
                               onClick={addNewCourse}
                               >Confirm</button>
                           </div>
@@ -173,17 +176,17 @@ function Course() {
                               onClick={() => setWithdrawConfirmed(false)}
                               >✕</button>
                           </form>
-                          <h3 className="font-bold text-3xl">Important!</h3>
-                          <p className="py-4 text-2xl">
-                              Are you sure you want to withdraw this course? Keep in mind
-                              that you <b>will not</b> be able to take this course once you
-                              withdraw it.
+                          <h3 className="font-bold text-3xl text-center">Important!</h3>
+                          <p className="py-4 text-2xl text-center">
+                              Are you sure you want to join this course? Keep in mind
+                              that you <b>will not</b> be able to withdraw this course once you
+                              join it.
                           </p>
                           <div className="modal-action">
                               <button 
-                              className="btn btn-lg btn-neutral w-full"
+                              className="btn btn-lg btn-secondary w-full text-white"
                               onClick={() => setWithdrawConfirmed(true)}
-                              >Withdraw</button>
+                              >Join</button>
                           </div>
                       </>
                   )

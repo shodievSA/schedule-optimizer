@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { useLocation, useParams, useNavigate } from "react-router-dom"
+import { IoIosArrowBack } from "react-icons/io"
 import styles from "./UserCourse.module.css"
 
 export default function UserCourse() {
@@ -23,7 +24,7 @@ export default function UserCourse() {
         term,
         course_description,
         days,
-        times
+        times,
 
     } = location.state;
 
@@ -51,7 +52,19 @@ export default function UserCourse() {
 
     return (
         <div className={styles["page-container"]}>
-            <div>
+            <div className="flex items-center justify-center gap-x-16 relative">
+                <div className="tooltip absolute left-0" data-tip="Home">
+                    <IoIosArrowBack 
+                    className="text-5xl"
+                    onClick={() => navigate(-1)}
+                    />
+                </div>
+                <div className="text-3xl font-semibold flex gap-x-12">
+                    <h1>{ course }</h1>
+                    <h1>{ days }, { times }</h1>
+                </div>
+            </div>
+            <div className="flex gap-x-16 pt-14">
                 <div className={styles["instructor-details"]}>
                 <div className={styles["image-container"]}>
                     <img
@@ -63,17 +76,9 @@ export default function UserCourse() {
                 <h1>{instructor}</h1>
                 </div>
                 <div className={styles["course-description"]}>
-                <h1>{course}</h1>
-                <p>{course_description}</p>
+                    <h1>About the course:</h1>
+                    <p>{course_description}</p>
                 </div>
-            </div>
-            <div className={styles["course-schedule"]}>
-                <h1>
-                Days: <b>{days}</b>
-                </h1>
-                <h1>
-                Times: <b>{times}</b>
-                </h1>
             </div>
             <button 
             className={styles["withdraw-course-button"]}
@@ -82,7 +87,7 @@ export default function UserCourse() {
                 Withdraw Course
             </button>
             <dialog className={styles['modal-window']} ref={modalRef}>
-                <div className="modal-box p-10">
+                <div className="modal-box p-10 flex flex-col gap-y-4">
                     {
                         withdrawConfirmed ? (
                             <>
@@ -92,7 +97,7 @@ export default function UserCourse() {
                                     onClick={() => setWithdrawConfirmed(false)}
                                     >✕</button>
                                 </form>
-                                <h3 className="font-bold text-2xl">Please prove your identity</h3>
+                                <h3 className="font-bold text-2xl text-center">Please prove your identity</h3>
                                 <div className={styles['user-credentials']}>
                                     <label className="input input-lg input-bordered flex items-center gap-2">
                                         <svg
@@ -135,7 +140,7 @@ export default function UserCourse() {
                                 </div>
                                 <div className="modal-action">
                                     <button 
-                                    className="btn btn-lg btn-neutral w-full"
+                                    className="btn btn-lg btn-secondary w-full text-white"
                                     onClick={withdrawCourse}
                                     >Confirm</button>
                                 </div>
@@ -148,15 +153,15 @@ export default function UserCourse() {
                                     onClick={() => setWithdrawConfirmed(false)}
                                     >✕</button>
                                 </form>
-                                <h3 className="font-bold text-3xl">Important!</h3>
-                                <p className="py-4 text-2xl">
+                                <h3 className="font-bold text-3xl text-center">Important!</h3>
+                                <p className="py-4 text-2xl text-center">
                                     Are you sure you want to withdraw this course? Keep in mind
                                     that you <b>will not</b> be able to take this course once you
                                     withdraw it.
                                 </p>
                                 <div className="modal-action">
                                     <button 
-                                    className="btn btn-lg btn-neutral w-full"
+                                    className="btn btn-lg btn-secondary w-full text-white"
                                     onClick={() => setWithdrawConfirmed(true)}
                                     >Withdraw</button>
                                 </div>

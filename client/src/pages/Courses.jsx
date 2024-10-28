@@ -10,6 +10,7 @@ function Courses() {
   const navigate = useNavigate();
 
   useEffect(() => {
+
     async function fetchCourses() {
       let res = await fetch(
         "http://localhost:3000/api/v1/available-university-courses"
@@ -19,8 +20,9 @@ function Courses() {
       setCourses(data.data)
     }
 
-    fetchCourses()
-  }, [])
+    fetchCourses();
+    
+  }, []);
 
   async function handleCourseSearch(e) {
 
@@ -35,8 +37,6 @@ function Courses() {
       }
 
   }
-
-  console.log(searchResults)
 
   function handleRedirection(
     courseId,
@@ -60,7 +60,7 @@ function Courses() {
         credit_hours,
         title,
         term,
-        section,
+        section
       },
     })
   }
@@ -147,7 +147,8 @@ function Courses() {
                                   course["title"],
                                   course["term"],
                                   course["section"],
-                                  course["credit_hours"]
+                                  course["credit_hours"],
+                                  course['student_feedbacks']
                                 )
                               }
                             >

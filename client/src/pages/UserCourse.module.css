@@ -1,9 +1,6 @@
 .page-container {
-    @apply flex flex-col h-full overflow-y-hidden;
+    @apply flex flex-col h-full;
   }
-.page-container > div:first-child {
-    @apply flex items-center gap-x-16;
-}
 .instructor-details {
     @apply flex flex-col items-center gap-y-4;
 }
@@ -23,19 +20,19 @@
     @apply rounded-md;
 }
 .course-description {
-    @apply flex flex-col gap-y-5;
+    @apply flex flex-col gap-y-5
 }
 .course-description h1 {
-    @apply text-center text-2xl font-medium;
+    @apply text-2xl font-medium
 }
 .course-description p {
-    @apply text-xl;
+    @apply text-xl
 }
 .course-schedule {
     @apply flex grow items-center justify-center text-xl gap-x-5;
 }
 .withdraw-course-button {
-    @apply btn btn-neutral w-8/12 alert-error btn-lg mt-auto self-center shadow-md text-white;
+    @apply btn btn-neutral w-8/12 alert-error btn-lg mt-auto self-center shadow-md text-white shadow-md border-0
 }
 .user-credentials {
     @apply flex flex-col gap-y-5 mt-8

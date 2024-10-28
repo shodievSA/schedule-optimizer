@@ -41,6 +41,10 @@ const Courses = sequelize.define(
         course_description: {
             type: DataTypes.TEXT
         },
+        student_feedbacks: {
+            type: DataTypes.ARRAY(DataTypes.JSON),
+            defaultValue: []
+        },
         course_id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,

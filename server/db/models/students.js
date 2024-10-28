@@ -21,7 +21,8 @@ const Student = sequelize.define(
             type: DataTypes.TEXT
         },
         student_courses: {
-            type: DataTypes.ARRAY(DataTypes.JSON)
+            type: DataTypes.ARRAY(DataTypes.JSON),
+            defaultValue: []
         },
         student_id: {
             type: DataTypes.INTEGER,
@@ -31,6 +32,9 @@ const Student = sequelize.define(
         },
         student_name: {
             type: DataTypes.TEXT
+        },
+        student_status: {
+            type: DataTypes.TEXT,
         }
     }
 );

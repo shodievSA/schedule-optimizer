@@ -22,13 +22,11 @@ function App() {
         <Route element={<AppLayout />}>
           <Route index element={<Navigate replace to="/dashboard" />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard/:courseId" element={<UserCourse />} />
+          <Route path="/dashboard/:courseId/students-feedback" element={<StudentsFeedback />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/courses/:courseId" element={<Course />} />
-          <Route
-            path="/courses/:courseId/students-feedback"
-            element={<StudentsFeedback />}
-          />
-          <Route path="/user-course/:courseId" element={<UserCourse />} />
+          <Route path="/courses/:courseId/students-feedback" element={<StudentsFeedback />} />
           <Route path="/instructors" element={<Instructors />} />
           <Route path="/assistant" element={<Assistant />} />
           <Route path="/logout" element={<Logout />}></Route>

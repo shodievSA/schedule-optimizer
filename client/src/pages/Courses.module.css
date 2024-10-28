@@ -11,5 +11,5 @@
   @apply py-8 px-8 text-base text-center font-medium;
 }
 .table-body > tr {
-  @apply hover:bg-slate-200 cursor-pointer;
+  @apply hover:bg-base-300 cursor-pointer;
 }
