@@ -171,7 +171,7 @@ function Dashboard() {
             </div>
         </div>
       {courses.length > 0 ? (
-        <table className="table border rounded-xl">
+        <table className="table rounded-xl">
           <thead className="text-lg text-center text-white bg-neutral">
             <tr className="text-center font-medium">
               <th className="p-6">Course No.</th>

@@ -7,12 +7,20 @@ const client = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY
 });
 
-async function sendPrompt(prompt) {
+async function sendPrompt(prompt, databaseData, universityCourses) {
 
-    const content = "";
+    prompt = "Student's prompt:\n\n" + prompt + "\n\nStudent Data:\n\n" + "```json\n" + databaseData + "\n```\n\nUniversity courses data:\n\n" + "```json\n" + universityCourses + "\n```";
+
+    const content = "The prompt will contain the student's inquiry about the university he studies. " +
+                    "The data about the university, such as student's data, instructors and courses, " +
+                    "will be included in the prompt, formatted as JSON. Reply only with the data that " +
+                    "the user is asking for and refer to the user with their name, please. " +
+                    "Respond without special formatting like asterisks or markdown. Provide plain text answers. " +
+                    "When presenting lists, use new lines for each item instead of inline formatting. Format the list items with numbers or bullet points, each on a new line.";
 
     const chatCompletion = await client.chat.completions.create({
         messages: [
+            { role: 'user', content: content },
             { role: 'user', content: prompt }
         ],
         model: "gpt-4o-mini"

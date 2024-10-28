@@ -185,8 +185,36 @@ app.post("/api/v1/delete-user-course", async (req, res) => {
 
 app.post("/api/v1/student-prompt", async (req, res) => {
 
+    const student_email = req.session['student-email'];
     const prompt = req.body['prompt'];
-    const gptResponse = await sendPrompt(prompt);
+
+    const studentData = await Students.findOne({
+        where: { student_email: student_email },
+        attributes: [
+          'student_email',
+          'student_email_password',
+          'student_courses',
+          'student_name',
+          'student_status'
+        ]
+    });
+
+    const universityData = await Courses.findAll({
+      attributes: [
+        'instructor',
+        'days',
+        'times',
+        'title',
+        'section',
+        'student_feedbacks'
+      ]
+    });
+
+    const gptResponse = await sendPrompt(
+      prompt, 
+      JSON.stringify(studentData.dataValues),
+      JSON.stringify(universityData)
+    );
 
     res.json({ data: gptResponse });
 
