@@ -87,7 +87,8 @@ app.get("/api/v1/instructors", async (req, res) => {
               "instructor_name",
               "instructor_courses",
               "instructor_email",
-              "office_hours"
+              "office_hours",
+              "instructor_id"
           ]
       });
 
