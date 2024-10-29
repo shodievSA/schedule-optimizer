@@ -1,9 +1,9 @@
 import { useRef } from "react"
 import { NavLink } from "react-router-dom"
 import {
-  HiOutlineAcademicCap,
   HiOutlineBookmark,
   HiOutlineHome,
+  HiOutlineUserGroup,
 } from "react-icons/hi"
 import { IoExitOutline } from "react-icons/io5"
 import { RiRobot2Line } from "react-icons/ri"
@@ -53,7 +53,7 @@ function Sidebar() {
                   : styles["sidebar__nav--link"]
               }
             >
-              <HiOutlineAcademicCap />
+              <HiOutlineUserGroup />
               <span>Instructors</span>
             </NavLink>
           </li>
