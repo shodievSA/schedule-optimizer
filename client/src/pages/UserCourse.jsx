@@ -64,16 +64,16 @@ export default function UserCourse() {
                     <h1>{ days }, { times }</h1>
                 </div>
             </div>
-            <div className="flex gap-x-16 pt-14">
+            <div className="flex gap-x-16 grow items-center">
                 <div className={styles["instructor-details"]}>
-                <div className={styles["image-container"]}>
-                    <img
-                    src="/assets/woman-image-placeholder.jpg"
-                    alt="Instructor Picture"
-                    className={styles["instructor-image"]}
-                    />
-                </div>
-                <h1>{instructor}</h1>
+                    <div className={styles["image-container"]}>
+                        <img
+                        src="/assets/woman-image-placeholder.jpg"
+                        alt="Instructor Picture"
+                        className={styles["instructor-image"]}
+                        />
+                    </div>
+                    <h1>{instructor}</h1>
                 </div>
                 <div className={styles["course-description"]}>
                     <h1>About the course:</h1>

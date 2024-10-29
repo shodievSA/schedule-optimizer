@@ -91,7 +91,7 @@ function Courses() {
       <div className="overflow-auto">
         {
             courses.length > 0 ? (
-              <table className="table border">
+              <table className={styles['university-courses-table']}>
                 <thead className={styles["table-header"]}>
                   <tr>
                     <th>Title</th>

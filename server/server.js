@@ -8,6 +8,7 @@ const path = require("path")
 const app = require("./app")
 const Courses = require("./db/models/courses.js")
 const Students = require("./db/models/students.js")
+const Instructors = require("./db/models/instructors.js")
 const sendPrompt = require("./utils/sendPrompt.js")
 
 const sequelize = new Sequelize(
@@ -195,7 +196,8 @@ app.post("/api/v1/student-prompt", async (req, res) => {
           'student_email_password',
           'student_courses',
           'student_name',
-          'student_status'
+          'student_status',
+          'student_major'
         ]
     });
 
@@ -210,10 +212,20 @@ app.post("/api/v1/student-prompt", async (req, res) => {
       ]
     });
 
+    const instructorsData = await Instructors.findAll({
+        attributes: [
+          'instructor_name',
+          'instructor_courses',
+          'instructor_email',
+          'office_hours'
+        ]
+    });
+    
     const gptResponse = await sendPrompt(
-      prompt, 
-      JSON.stringify(studentData.dataValues),
-      JSON.stringify(universityData)
+        prompt, 
+        JSON.stringify(studentData.dataValues),
+        JSON.stringify(universityData),
+        JSON.stringify(instructorsData)
     );
 
     res.json({ data: gptResponse });

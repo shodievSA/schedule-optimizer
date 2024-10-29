@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom"
 import { TypeAnimation } from "react-type-animation"
 import SkeletonTable from "../components/SkeletonTable"
 import ThemeContext from "../context/ThemeContext"
+import styles from "./Dashboard.module.css"
 
 function Dashboard() {
 
@@ -171,8 +172,8 @@ function Dashboard() {
             </div>
         </div>
       {courses.length > 0 ? (
-        <table className="table rounded-xl">
-          <thead className="text-lg text-center text-white bg-neutral">
+        <table className={styles['user-courses-table']}>
+          <thead className={styles['table-header']}>
             <tr className="text-center font-medium">
               <th className="p-6">Course No.</th>
               <th className="p-6">Course</th>
@@ -183,7 +184,7 @@ function Dashboard() {
               <th className="p-6">Term</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className={styles['table-body']}>
             {courses.map((course, index) => {
               return (
                 <tr

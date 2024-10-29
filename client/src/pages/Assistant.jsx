@@ -30,12 +30,19 @@ function Assistant() {
       })
       const data = await res.json()
 
-      console.log(data)
-      setResponse(data.data)
+      setResponse(data.data);
+
+      const emailPattern = /\b([A-Za-z0-9._%+-]+@webster\.edu)\b/g;
+      const text = (data.data).replace(/\n\n/g, '<br><br>')
+                              .replace(/\n/g, '<br>')
+                              .replace(emailPattern, (match) => {
+                                  const outlookWebLink = `https://outlook.office365.com/mail/deeplink/compose?to=${match}`;
+                                  return `<a class="link-secondary" href="${outlookWebLink}" target="_blank" rel="noopener noreferrer">${match}</a>`;
+                              });
 
       setMessages((prevMessages) => [
         ...prevMessages,
-        { type: "assistant", text: data.data },
+        { type: "assistant", text: text },
       ]);
       setIsLoading(false);
     } catch (err) {
@@ -52,22 +59,37 @@ function Assistant() {
       >
         {
           messages.length > 0 ? (
-            messages.map((msg, index) => (
-              <div
-                key={index}
-                className={
-                  msg.type === "user"
-                    ? "text-black chat chat-end"
-                    : "text-black chat chat-start"
-                }
-              >
-                {/* {msg.type === "user" ? "You: " : "Assistant: "} */}
-                <div className={ msg.type === "user"
-                    ? "chat-bubble chat-bubble-primary"
-                    : "chat-bubble"
-                }>{msg.text}</div>
-              </div>
-            ))
+            messages.map((msg, index) => {
+
+              return (
+                  <div
+                    key={index}
+                    className={
+                      msg.type === "user"
+                        ? "text-black chat chat-end"
+                        : "text-black chat chat-start"
+                    }
+                  >
+                    {
+                        msg.type === "assistant" ? (
+                            <div 
+                            className={ msg.type === "user"
+                              ? "chat-bubble chat-bubble-primary"
+                              : "chat-bubble"
+                            }
+                            dangerouslySetInnerHTML={{
+                              __html: `<p>${msg.text}</p>`,
+                            }}></div>
+                        ) : (
+                            <div className={ msg.type === "user"
+                              ? "chat-bubble chat-bubble-primary"
+                              : "chat-bubble"
+                            }>{msg.text}</div>
+                        )
+                    }
+                  </div>
+              )
+              })
           ) : (
             <div className="flex justify-center items-center grow p-12">
               <h1 className="text-5xl font-semibold text-center leading-snug">

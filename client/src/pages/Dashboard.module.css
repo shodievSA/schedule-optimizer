@@ -1,0 +1,20 @@
+.user-courses-table {
+    @apply table
+}
+
+.user-courses-table {
+    border-width: 1px !important;
+    border-color: var(--fallback-b2, oklch(var(--b2) / var(--tw-border-opacity))) !important;
+    border-style: solid !important;
+    --tw-border-opacity: 1;
+}
+
+.table-header > tr > th {
+    @apply bg-neutral p-6 text-lg font-medium text-white text-center;
+  }
+  .table-body > tr > td {
+    @apply py-8 px-8 text-base text-center font-medium;
+  }
+  .table-body > tr {
+    @apply hover:bg-base-300 cursor-pointer;
+  }
