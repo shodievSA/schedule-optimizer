@@ -5,13 +5,13 @@ function Assistant() {
   const [prompt, setPrompt] = useState("")
   const [response, setResponse] = useState("")
   const [messages, setMessages] = useState([])
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false)
 
   async function sendPrompt(e) {
-    e.preventDefault();
+    e.preventDefault()
 
-    setIsLoading(true);
-    setPrompt("");
+    setIsLoading(true)
+    setPrompt("")
 
     setMessages((prevMessages) => [
       ...prevMessages,
@@ -36,80 +36,76 @@ function Assistant() {
       setMessages((prevMessages) => [
         ...prevMessages,
         { type: "assistant", text: data.data },
-      ]);
-      setIsLoading(false);
+      ])
+      setIsLoading(false)
     } catch (err) {
       console.error(err)
     }
   }
 
   return (
-    <div 
-    className="flex flex-col h-[calc(100vh-48px)] gap-y-8"
-    >
-      <div 
-      className="flex flex-col w-5/6 gap-4 p-8 mx-auto rounded-md grow overflow-y-auto"
-      >
-        {
-          messages.length > 0 ? (
-            messages.map((msg, index) => (
+    <div className="flex flex-col h-[calc(100vh-48px)] gap-y-8">
+      <div className="flex flex-col w-5/6 gap-4 p-8 mx-auto overflow-y-auto rounded-md grow">
+        {messages.length > 0 ? (
+          messages.map((msg, index) => (
+            <div
+              key={index}
+              className={
+                msg.type === "user"
+                  ? "text-black chat chat-end"
+                  : "text-black chat chat-start"
+              }
+            >
+              {/* {msg.type === "user" ? "You: " : "Assistant: "} */}
               <div
-                key={index}
                 className={
                   msg.type === "user"
-                    ? "text-black chat chat-end"
-                    : "text-black chat chat-start"
-                }
-              >
-                {/* {msg.type === "user" ? "You: " : "Assistant: "} */}
-                <div className={ msg.type === "user"
                     ? "chat-bubble chat-bubble-primary"
                     : "chat-bubble"
-                }>{msg.text}</div>
+                }
+              >
+                {msg.text}
               </div>
-            ))
-          ) : (
-            <div className="flex justify-center items-center grow p-12">
-              <h1 className="text-5xl font-semibold text-center leading-snug">
-                  <TypeAnimation
-                    sequence={
-                      [
-                      'Meet the first AI-powered Academic Advisor', 2000,
-                      'Have questions about your semester or schedule?', 2000,
-                      'Feel free to ask!', 2000
-                      ]
-                    }
-                    speed={30}
-                    omitDeletionAnimation={true}
-                    repeat={Infinity}
-                    cursor={false}
-                  />
-              </h1>
             </div>
-          )
-        }
-        {
-            isLoading && (
-              <span className="loading loading-dots loading-lg"></span>
-            )
-        }
+          ))
+        ) : (
+          <div className="flex items-center justify-center p-12 grow">
+            <h1 className="text-5xl font-semibold leading-snug text-center">
+              <TypeAnimation
+                sequence={[
+                  "Meet the first AI-powered Academic Advisor",
+                  2000,
+                  "Have questions about your semester or schedule?",
+                  2000,
+                  "Feel free to ask!",
+                  2000,
+                ]}
+                speed={30}
+                omitDeletionAnimation={true}
+                repeat={Infinity}
+                cursor={false}
+              />
+            </h1>
+          </div>
+        )}
+        {isLoading && <span className="loading loading-dots loading-lg"></span>}
       </div>
 
-      <div className="w-full pb-12 bottom-6 chat-footer flex justify-center">
-        <form 
-        onSubmit={sendPrompt} 
-        className="relative flex w-9/12"
+      <div className="flex justify-center w-full pb-12 bottom-6 chat-footer">
+        <form
+          onSubmit={sendPrompt}
+          className="relative flex justify-center w-9/12"
         >
-            <input
-            className="flex text-lg items-center w-full gap-2 py-8 rounded-lg input input-lg input-bordered"
+          <input
+            className="flex items-center w-full gap-2 py-8 pr-16 text-lg rounded-lg input input-lg input-bordered"
             type="text"
             value={prompt}
             placeholder="Do you need help regarding your schedule?"
             onChange={(e) => setPrompt(e.target.value)}
-            />
-            <button className="absolute rounded-lg right-3 top-[10px] btn btn-circle btn-ghost">
-              Send
-            </button>
+          />
+          <button className="absolute rounded-lg right-3 top-[10px] btn btn-circle btn-ghost">
+            Send
+          </button>
         </form>
       </div>
     </div>
