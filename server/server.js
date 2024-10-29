@@ -82,7 +82,16 @@ app.get("/api/v1/user-courses", async (req, res) => {
 
 app.get("/api/v1/instructors", async (req, res) => {
 
-    
+      const instructorsData = await Instructors.findAll({
+          attributes: [
+              "instructor_name",
+              "instructor_courses",
+              "instructor_email",
+              "office_hours"
+          ]
+      });
+
+      res.status(200).json({ data: instructorsData });
 
 });
 
@@ -299,6 +308,23 @@ app.get('/api/v1/course-feedback/:courseID', async (req, res) => {
     res.json({ data: courseFeedbacks });
 
 });
+
+// app.get('/api/v1/instructors', async (req, res) => {
+
+//     const instructorsData = await Instructors.findAll({
+//         attributes: [
+//             "instructor_name",
+//             "instructor_courses",
+//             "instructor_email",
+//             "office_hours"
+//         ]
+//     });
+
+//     console.log(instructorsData)
+
+//     res.send(200).json({ data: instructorsData });
+
+// });
 
 app.get("/api/v1/logout-user", async (req, res) => {
 
