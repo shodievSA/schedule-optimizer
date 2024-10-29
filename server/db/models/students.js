@@ -35,6 +35,9 @@ const Student = sequelize.define(
         },
         student_status: {
             type: DataTypes.TEXT,
+        },
+        student_major: {
+            type: DataTypes.TEXT
         }
     }
 );

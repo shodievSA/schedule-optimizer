@@ -1,3 +1,4 @@
+import { useRef } from "react"
 import { NavLink } from "react-router-dom"
 import {
   HiOutlineBookmark,
@@ -9,8 +10,11 @@ import { RiRobot2Line } from "react-icons/ri"
 import styles from "./Sidebar.module.css"
 
 function Sidebar() {
+
+  const dialogWindowRef = useRef(null);
+
   return (
-    <div className="flex flex-col gap-8 px-5 fixed top-0 left-0 h-screen w-[15rem] py-4 border-r border-gray-200">
+    <div className={styles['sidebar']}>
       <img src="/assets/logo.png" alt="Webster Logo" />
       <nav className="grow">
         <ul className="flex flex-col h-full gap-6">
@@ -67,20 +71,36 @@ function Sidebar() {
             </NavLink>
           </li>
           <li className="pb-6 mt-auto">
-            <NavLink
-              to="/logout"
-              className={({ isActive }) =>
-                isActive
-                  ? `${styles["sidebar__nav--link"]} ${styles["active"]}`
-                  : styles["sidebar__nav--link"]
-              }
+            <button 
+            className={styles['logout-button']}
+            onClick={() => dialogWindowRef.current.showModal()}
             >
-              <IoExitOutline />
-              <span>Log out</span>
-            </NavLink>
+                <IoExitOutline />
+                <span>Log out</span>
+            </button>
           </li>
         </ul>
       </nav>
+      <dialog 
+      className="modal backdrop-blur-2xl" 
+      ref={dialogWindowRef}
+      style={{ overflowY: "hidden !important" }}
+      >
+        <div className="modal-box p-10 flex flex-col gap-y-4">
+          <form method="dialog">
+              <button 
+              className="btn btn-circle btn-ghost absolute right-4 top-4 text-xl"
+              >✕</button>
+          </form>
+          <h1 className="font-bold text-3xl text-center">Important!</h1>
+          <p className="py-4 text-2xl text-center">
+              Are you sure you want to logout from your account?
+          </p>
+          <button 
+          className="btn btn-lg btn-secondary w-full text-white"
+          >Confirm</button>
+        </div>
+      </dialog>
     </div>
   )
 }

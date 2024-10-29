@@ -20,7 +20,7 @@
     @apply rounded-md;
 }
 .course-description {
-    @apply flex flex-col gap-y-5
+    @apply flex flex-col gap-y-5 
 }
 .course-description h1 {
     @apply text-2xl font-medium
@@ -32,13 +32,13 @@
     @apply flex grow items-center justify-center text-xl gap-x-5;
 }
 .withdraw-course-button {
-    @apply btn btn-neutral w-8/12 alert-error btn-lg mt-auto self-center shadow-md text-white shadow-md border-0
+    @apply btn btn-secondary w-8/12 alert-error btn-lg mt-auto self-center shadow-md text-white shadow-md border-0
 }
 .user-credentials {
     @apply flex flex-col gap-y-5 mt-8
 }
 .modal-window {
-    @apply modal
+    @apply modal backdrop-blur-2xl
 }
 .modal-window {
     overflow-y: hidden !important;

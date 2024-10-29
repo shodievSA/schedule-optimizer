@@ -1,4 +1,5 @@
 import daisyui from 'daisyui'
+import { light, retro } from 'daisyui/src/theming/themes'
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -13,7 +14,7 @@ export default {
         daisyui
     ],
     daisyui: {
-        themes: true,
+        themes: true
     }
 }
 

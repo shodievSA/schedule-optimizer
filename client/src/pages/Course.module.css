@@ -32,13 +32,13 @@
   @apply flex grow items-center justify-center text-xl gap-x-5;
 }
 .join-course-button {
-  @apply btn w-8/12 btn-neutral btn-lg mt-auto self-center shadow-md border-0
+  @apply btn w-8/12 btn-secondary text-white btn-lg mt-auto self-center shadow-md border-0
 }
 .user-credentials {
   @apply flex flex-col gap-y-5 mt-8
 }
 .modal-window {
-  @apply modal
+  @apply modal backdrop-blur-2xl
 }
 .modal-window {
   overflow-y: hidden !important;

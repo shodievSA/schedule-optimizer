@@ -8,6 +8,7 @@ const path = require("path")
 const app = require("./app")
 const Courses = require("./db/models/courses.js")
 const Students = require("./db/models/students.js")
+const Instructors = require("./db/models/instructors.js")
 const sendPrompt = require("./utils/sendPrompt.js")
 
 const sequelize = new Sequelize(
@@ -185,8 +186,47 @@ app.post("/api/v1/delete-user-course", async (req, res) => {
 
 app.post("/api/v1/student-prompt", async (req, res) => {
 
+    const student_email = req.session['student-email'];
     const prompt = req.body['prompt'];
-    const gptResponse = await sendPrompt(prompt);
+
+    const studentData = await Students.findOne({
+        where: { student_email: student_email },
+        attributes: [
+          'student_email',
+          'student_email_password',
+          'student_courses',
+          'student_name',
+          'student_status',
+          'student_major'
+        ]
+    });
+
+    const universityData = await Courses.findAll({
+      attributes: [
+        'instructor',
+        'days',
+        'times',
+        'title',
+        'section',
+        'student_feedbacks'
+      ]
+    });
+
+    const instructorsData = await Instructors.findAll({
+        attributes: [
+          'instructor_name',
+          'instructor_courses',
+          'instructor_email',
+          'office_hours'
+        ]
+    });
+    
+    const gptResponse = await sendPrompt(
+        prompt, 
+        JSON.stringify(studentData.dataValues),
+        JSON.stringify(universityData),
+        JSON.stringify(instructorsData)
+    );
 
     res.json({ data: gptResponse });
 
