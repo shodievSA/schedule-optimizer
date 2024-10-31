@@ -53,7 +53,7 @@ function Assistant() {
 
   return (
     <div className="flex flex-col h-[calc(100vh-48px)] gap-y-8">
-      <div className="flex flex-col w-5/6 gap-4 p-8 mx-auto overflow-y-auto rounded-md grow">
+      <div className="flex flex-col w-11/12 gap-4 p-8 mx-auto overflow-y-auto rounded-md grow">
         {messages.length > 0 ? (
           messages.map((msg, index) => {
             return (
@@ -61,30 +61,22 @@ function Assistant() {
                 key={index}
                 className={
                   msg.type === "user"
-                    ? "text-black chat chat-end"
-                    : "text-black chat chat-start"
+                    ? "chat chat-end"
+                    : "chat chat-start"
                 }
               >
                 {msg.type === "assistant" ? (
                   <div
-                    className={
-                      msg.type === "user"
-                        ? "chat-bubble chat-bubble-primary"
-                        : "chat-bubble"
-                    }
-                    dangerouslySetInnerHTML={{
-                      __html: `<p>${msg.text}</p>`,
-                    }}
+                      className="chat-bubble p-2 py-4 px-4"
+                      dangerouslySetInnerHTML={{
+                          __html: `<p class="text-lg">${msg.text}</p>`,
+                      }}
                   ></div>
                 ) : (
-                  <div
-                    className={
-                      msg.type === "user"
-                        ? "chat-bubble chat-bubble-primary"
-                        : "chat-bubble"
-                    }
+                  <div 
+                  className="chat-bubble chat-bubble-primary text-lg py-4 px-6"
                   >
-                    {msg.text}
+                      {msg.text}
                   </div>
                 )}
               </div>

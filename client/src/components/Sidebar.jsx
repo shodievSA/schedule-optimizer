@@ -1,5 +1,5 @@
 import { useRef } from "react"
-import { NavLink } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
 import {
   HiOutlineBookmark,
   HiOutlineHome,
@@ -11,7 +11,16 @@ import styles from "./Sidebar.module.css"
 
 function Sidebar() {
 
+  const navigate = useNavigate();
+
   const dialogWindowRef = useRef(null);
+
+  const handleLogout = async () => {
+      let res = await fetch("http://localhost:3000/api/v1/logout-user");
+      if (res.ok) {
+          navigate("/registration", { replace: true })
+      }
+  }
 
   return (
     <div className={styles['sidebar']}>
@@ -82,9 +91,8 @@ function Sidebar() {
         </ul>
       </nav>
       <dialog 
-      className="modal backdrop-blur-2xl" 
+      className={styles['dialog-window']}
       ref={dialogWindowRef}
-      style={{ overflowY: "hidden !important" }}
       >
         <div className="modal-box p-10 flex flex-col gap-y-4">
           <form method="dialog">
@@ -97,6 +105,7 @@ function Sidebar() {
               Are you sure you want to logout from your account?
           </p>
           <button 
+          onClick={handleLogout}
           className="btn btn-lg btn-secondary w-full text-white"
           >Confirm</button>
         </div>

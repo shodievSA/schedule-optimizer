@@ -45,3 +45,8 @@
 .logout-button {
     @apply w-full
 }
+
+.dialog-window {
+   @apply modal backdrop-blur-2xl overflow-y-hidden
+}
+
