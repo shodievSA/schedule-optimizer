@@ -1502,33 +1502,30 @@ let instructorsData = [
 
 // FIRST SCRIPT
 // for (let i = 0; i < instructorsData.length; i++) {
-//     instructors.create({
-//         instructor_name: instructorsData[i]["instructor_name"],
-//         instructor_courses: instructorsData[i]["instructor_courses"],
-//         instructor_email: instructorsData[i]["instructor_email"],
-//         office_hours: instructorsData[i]["office_hours"],
-//     });
+//   instructors.create({
+//     instructor_name: instructorsData[i]["instructor_name"],
+//     instructor_courses: instructorsData[i]["instructor_courses"],
+//     instructor_email: instructorsData[i]["instructor_email"],
+//     office_hours: instructorsData[i]["office_hours"],
+//   })
 // }
 
 // SECOND SCRIPT
-// for (let i = 0; i < instructorsData.length; i++)
-// {
-//     const instructor_courses = instructorsData[i]['instructor_courses']; // array
+// for (let i = 0; i < instructorsData.length; i++) {
+//   const instructor_courses = instructorsData[i]["instructor_courses"] // array
 
-//     for (let j = 0; j < instructor_courses.length; j++)
-//     {
-//         courses.create({
-//             course: instructor_courses[j]['course'],
-//             instructor: instructorsData[i]['instructor_name'],
-//             days: instructor_courses[j]['days'],
-//             credit_hours: instructor_courses[j]['credit_hours'],
-//             course_description: instructor_courses[j]['course_description'],
-//             times: instructor_courses[j]['times'],
-//             title: instructor_courses[j]['title'],
-//             section: instructor_courses[j]['section'],
-//             term: instructor_courses[j]['term'],
-//             student_feedbacks: []
-//         });
-//     }
-
+//   for (let j = 0; j < instructor_courses.length; j++) {
+//     courses.create({
+//       course: instructor_courses[j]["course"],
+//       instructor: instructorsData[i]["instructor_name"],
+//       days: instructor_courses[j]["days"],
+//       credit_hours: instructor_courses[j]["credit_hours"],
+//       course_description: instructor_courses[j]["course_description"],
+//       times: instructor_courses[j]["times"],
+//       title: instructor_courses[j]["title"],
+//       section: instructor_courses[j]["section"],
+//       term: instructor_courses[j]["term"],
+//       student_feedbacks: [],
+//     })
+//   }
 // }

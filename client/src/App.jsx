@@ -14,6 +14,7 @@ import UserCourse from "./pages/UserCourse"
 import Logout from "./pages/Logout"
 import Assistant from "./pages/Assistant"
 import StudentsFeedback from "./pages/StudentsFeedback"
+import Instructor from "./pages/Instructor"
 
 function App() {
   return (
@@ -23,11 +24,18 @@ function App() {
           <Route index element={<Navigate replace to="/dashboard" />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/dashboard/:courseId" element={<UserCourse />} />
-          <Route path="/dashboard/:courseId/students-feedback" element={<StudentsFeedback />} />
+          <Route
+            path="/dashboard/:courseId/students-feedback"
+            element={<StudentsFeedback />}
+          />
           <Route path="/courses" element={<Courses />} />
           <Route path="/courses/:courseId" element={<Course />} />
-          <Route path="/courses/:courseId/students-feedback" element={<StudentsFeedback />} />
+          <Route
+            path="/courses/:courseId/students-feedback"
+            element={<StudentsFeedback />}
+          />
           <Route path="/instructors" element={<Instructors />} />
+          <Route path="/instructors/:instructorId" element={<Instructor />} />
           <Route path="/assistant" element={<Assistant />} />
           <Route path="/logout" element={<Logout />}></Route>
         </Route>

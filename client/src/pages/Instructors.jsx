@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react"
 import styles from "./Instructors.module.css"
 import { useNavigate } from "react-router-dom"
+import SkeletonTable from "../components/SkeletonTable"
 
 function Instructors() {
   const [instructors, setInstructors] = useState([])
-  const [searchResults, setSearchResults] = useState([])
+  const [searchResults, setSearchResults] = useState(null)
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -13,7 +14,9 @@ function Instructors() {
         const res = await fetch("http://localhost:3000/api/v1/instructors")
         const data = await res.json()
 
-        setInstructors(data)
+        console.log(data.data)
+        setInstructors(data.data)
+        setSearchResults(data.data)
       } catch (err) {
         console.error(err)
       }
@@ -23,11 +26,10 @@ function Instructors() {
   }, [])
 
   function handleInstructorSearch(e) {
-    if (e.target.value.length === null) {
-      setSearchResults([])
+    const query = e.target.value.toLowerCase()
+    if (query.length === 0) {
+      setSearchResults(instructors)
     } else {
-      const query = e.target.value.toLowerCase()
-
       setSearchResults(() =>
         instructors.filter((instructor) =>
           instructor.instructor_name.toLowerCase().includes(query)
@@ -36,14 +38,28 @@ function Instructors() {
     }
   }
 
-  function handleRedirection(courseId) {
-    navigate(`instructors/courses/${courseId}`)
+  console.log(instructors)
+
+  function handleRedirection(
+    instructorId,
+    instructor_name,
+    instructor_email,
+    instructor_courses
+  ) {
+    navigate(`/instructors/${instructorId}`, {
+      state: {
+        instructorId,
+        instructor_name,
+        instructor_email,
+        instructor_courses,
+      },
+    })
   }
 
   return (
     <div className={styles["page-container"]}>
       <div className="flex items-center justify-between">
-        <h1>Available instructors</h1>
+        <h1>Instructors</h1>
         <label className="flex items-center w-5/12 gap-2 input input-bordered input-lg">
           <input
             type="text"
@@ -84,24 +100,35 @@ function Instructors() {
                         key={instructor["instructor_id"]}
                         onClick={() =>
                           handleRedirection(
-                            instructor["instructor_id"],
-                            instructor["instructor"],
-                            instructor["days"],
-                            instructor["times"],
-                            instructor["instructor_description"],
-                            instructor["instructor"],
-                            instructor["title"],
-                            instructor["term"],
-                            instructor["section"],
-                            instructor["credit_hours"]
+                            instructor.instructor_id,
+                            instructor.instructor_name,
+                            instructor.instructor_email,
+                            instructor.instructor_courses
                           )
                         }
                       >
-                        <td>{instructor["title"]}</td>
-                        <td>{instructor["instructor"]}</td>
-                        <td>{instructor["days"]}</td>
-                        <td>{instructor["times"]}</td>
-                        <td>{instructor["credit_hours"]}</td>
+                        <td>
+                          <img
+                            src="/assets/woman-image-placeholder.jpg"
+                            alt="Avatar instructor"
+                            width="50"
+                            height="50"
+                            className="mx-auto"
+                          />
+                        </td>
+                        <td>{instructor["instructor_name"]}</td>
+                        <td>
+                          {Object.entries(instructor.office_hours)
+                            .filter(([key]) => key !== "room")
+                            .map(([key, value]) => (
+                              <div key={key}>
+                                <p>Time: {key}</p>
+                                <p>Days: {value.join(", ")}</p>
+                              </div>
+                            ))}
+                          <p>Room: {instructor.office_hours.room}</p>
+                        </td>
+                        <td>{instructor["instructor_email"]}</td>
                       </tr>
                     )
                   })
@@ -111,25 +138,32 @@ function Instructors() {
                         key={instructor["instructor_id"]}
                         onClick={() =>
                           handleRedirection(
-                            instructor["instructor_id"],
-                            instructor["instructor"],
-                            instructor["days"],
-                            instructor["times"],
-                            instructor["instructor_description"],
-                            instructor["instructor"],
-                            instructor["title"],
-                            instructor["term"],
-                            instructor["section"],
-                            instructor["credit_hours"],
-                            instructor["student_feedbacks"]
+                            instructor.instructor_id,
+                            instructor.instructor_name,
+                            instructor.instructor_email,
+                            instructor.instructor_courses
                           )
                         }
                       >
-                        <td>{instructor["title"]}</td>
-                        <td>{instructor["instructor"]}</td>
-                        <td>{instructor["days"]}</td>
-                        <td>{instructor["times"]}</td>
-                        <td>{instructor["credit_hours"]}</td>
+                        <td>
+                          <img
+                            src="/assets/woman-image-placeholder.jpg"
+                            alt="Avatar instructor"
+                          />
+                        </td>
+                        <td>{instructor["instructor_name"]}</td>
+                        <td>
+                          {Object.entries(instructor.office_hours)
+                            .filter(([key]) => key !== "room")
+                            .map(([key, value]) => (
+                              <div key={key}>
+                                <p>Time: {key}</p>
+                                <p>Days: {value.join(", ")}</p>
+                              </div>
+                            ))}
+                          <p>Room: {instructor.office_hours.room}</p>
+                        </td>
+                        <td>{instructor["instructor_email"]}</td>
                       </tr>
                     )
                   })}
