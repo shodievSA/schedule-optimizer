@@ -11,7 +11,6 @@ import Courses from "./pages/Courses"
 import Instructors from "./pages/Instructors"
 import Course from "./pages/Course"
 import UserCourse from "./pages/UserCourse"
-import Logout from "./pages/Logout"
 import Assistant from "./pages/Assistant"
 import StudentsFeedback from "./pages/StudentsFeedback"
 import Instructor from "./pages/Instructor"
@@ -37,7 +36,6 @@ function App() {
           <Route path="/instructors" element={<Instructors />} />
           <Route path="/instructors/:instructorId" element={<Instructor />} />
           <Route path="/assistant" element={<Assistant />} />
-          <Route path="/logout" element={<Logout />}></Route>
         </Route>
         <Route path="/registration" element={<Registration />}></Route>
       </Routes>
