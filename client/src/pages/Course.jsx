@@ -84,7 +84,7 @@ function Course() {
           Student Feedback
         </button>
       </div>
-      <div className="flex gap-x-16 pt-14">
+      <div className="flex gap-x-16 pt-14 grow">
         <div className={styles["instructor-details"]}>
           <div className={styles["image-container"]}>
             <img

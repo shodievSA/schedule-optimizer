@@ -520,7 +520,28 @@ let instructorsData = [
         credit_hours: 3,
         course_id: 177,
         course_description:
-          "This course covers topics including number systems, computer arithmetic, binary, octal, hexadecimal, floating point operations, sets and Boolean algebra. Prerequisites: COSC 1550 and COSC 1570.",
+          "This course covers topics including number systems, computer arithmetic, binary, octal, " +
+          "hexadecimal, floating point operations, sets and Boolean algebra. Prerequisites: COSC " +
+          "1550 and COSC 1570.\n\nOutcomes:\n\nAt the successful completion of this course this " +
+          "student will be able to:\n\n1. Classify numbers as Natural, Integer, Rational, Irrational," + 
+          "or Real.\n3. Simplify expressions with exponents.\n4. Interpret a programming assignment statement.\n" +
+          "3. Identify the properties of each system studied\n5. Solve simple algebraic equations.\n" +
+          "6. State the place values of the decimal, binary, octal, and hexadecimal number systems " +
+          "and be able to convert a rational number from one system to another.\n7. Add, subtract, multiply, " +
+          "and divide in multiple base number systems.\n8. Find the two’s complement of integers.\n9. Explain " +
+          "how text is stored as ASCII codes.\n10. Convert values to a binary-coded decimal format.\n11. Convert " +
+          "real number values to a normalized exponential notation format.\n12. Explain bit-mapped graphic storage." +
+          "\n13.Find a value based on a stored reference (memory address) of the value.\n14. Use basic set " +
+          "terminology and operations.\n15. Interpret and create Venn Diagrams.\n16. Use basic logic " +
+          "terminology and operations.\n17. Create truth tables for any combination of AND, OR, NOT, NAND, NOR, or EOR\n" +
+          "18. Use basic Boolean Algebra terminology and operations.\n19. Create Boolean tables for any combination " +
+          "of multiplication, addition, or complement operations.\n20. Draw and interpret Boolean networks " +
+          "and switching networks (logic gates).\n21. Use properties and Karnaugh maps to simplify Boolean expressions." +
+          "\n22. Compute modular arithmetic operations.\n23. Add, subtract, or transpose a matrix.\n\nGrading:\n\n" +
+          "- A: 94-100\n- A-: 90-93\n- B+: 87-89\n- B: 83-86\n- B-: 80-82\n- C+: 77-79\n- C: 73-76\n- C-: 70-72\n" +
+          "- D+: 65-69\n- D: 60-64\n- F: 59 and below.\nStudents need to earn C-/70% in order to progress in their " +
+          "academic track. If a student receives less than 70%/C-, that student cannot be registered, and would " +
+          "need to repeat the course."
       },
       {
         course: "COSC 1570",
@@ -532,7 +553,28 @@ let instructorsData = [
         credit_hours: 3,
         course_id: 178,
         course_description:
-          "This course covers topics including number systems, computer arithmetic, binary, octal, hexadecimal, floating point operations, sets and Boolean algebra. Prerequisites: COSC 1550 and COSC 1570.",
+          "This course covers topics including number systems, computer arithmetic, binary, octal, " +
+          "hexadecimal, floating point operations, sets and Boolean algebra. Prerequisites: COSC " +
+          "1550 and COSC 1570.\n\nOutcomes:\n\nAt the successful completion of this course this " +
+          "student will be able to:\n\n1. Classify numbers as Natural, Integer, Rational, Irrational," + 
+          "or Real.\n3. Simplify expressions with exponents.\n4. Interpret a programming assignment statement.\n" +
+          "3. Identify the properties of each system studied\n5. Solve simple algebraic equations.\n" +
+          "6. State the place values of the decimal, binary, octal, and hexadecimal number systems " +
+          "and be able to convert a rational number from one system to another.\n7. Add, subtract, multiply, " +
+          "and divide in multiple base number systems.\n8. Find the two’s complement of integers.\n9. Explain " +
+          "how text is stored as ASCII codes.\n10. Convert values to a binary-coded decimal format.\n11. Convert " +
+          "real number values to a normalized exponential notation format.\n12. Explain bit-mapped graphic storage." +
+          "\n13.Find a value based on a stored reference (memory address) of the value.\n14. Use basic set " +
+          "terminology and operations.\n15. Interpret and create Venn Diagrams.\n16. Use basic logic " +
+          "terminology and operations.\n17. Create truth tables for any combination of AND, OR, NOT, NAND, NOR, or EOR\n" +
+          "18. Use basic Boolean Algebra terminology and operations.\n19. Create Boolean tables for any combination " +
+          "of multiplication, addition, or complement operations.\n20. Draw and interpret Boolean networks " +
+          "and switching networks (logic gates).\n21. Use properties and Karnaugh maps to simplify Boolean expressions." +
+          "\n22. Compute modular arithmetic operations.\n23. Add, subtract, or transpose a matrix.\n\nGrading:\n\n" +
+          "- A: 94-100\n- A-: 90-93\n- B+: 87-89\n- B: 83-86\n- B-: 80-82\n- C+: 77-79\n- C: 73-76\n- C-: 70-72\n" +
+          "- D+: 65-69\n- D: 60-64\n- F: 59 and below.\nStudents need to earn C-/70% in order to progress in their " +
+          "academic track. If a student receives less than 70%/C-, that student cannot be registered, and would " +
+          "need to repeat the course."
       },
       {
         course: "COSC 3500",
@@ -544,7 +586,19 @@ let instructorsData = [
         credit_hours: 3,
         course_id: 179,
         course_description:
-          "This course provides students a holistic and integrative view of project management. The course covers concepts and skills that are used by IT professionals to propose, plan, secure resources, budget and lead IT project teams to a successful completion of their projects. Prerequisites: COSC 1560 and junior standing.",
+          "This course provides students a holistic and integrative view of project management. " +
+          "The course covers concepts and skills that are used by IT professionals to propose, " +
+          "plan, secure resources, budget and lead IT project teams to a successful completion of " +
+          "their projects. Prerequisites: COSC 1560 and junior standing.\n\nLearning Outcomes:\n\n" +
+          "Upon completion of the course, students will be able to:\n\n1. Identify different types " +
+          "of information systems projects.\n2. Understand the impact of organizational strategy " +
+          "on project management.\n3. Understand project management frameworks and methodologies. " + 
+          "4. Identify project management life cycle methodologies. 5. Understand project planning, " +
+          "monitoring, controlling, and reporting.\n6. Learn about managing risk, stakeholders, " +
+          "quality, suppliers, and changes during the project lifecycle.\n7. Understand the impact " +
+          "of human leadership on project management procedures and outcomes.\n\nGrading System:\n\n- A: 94-100" +
+          "\n- A-: 90-93\n- B+: 87-89\n- B: 83-86\n- B-: 80-82\n- C+: 77-79\n- C: 73-76\n- C-: 70-72\n- D+: 65-69" +
+          "\n- D: 60-64\n- F: 59 and below."
       },
       {
         course: "COSC 3500",
@@ -556,7 +610,19 @@ let instructorsData = [
         credit_hours: 3,
         course_id: 180,
         course_description:
-          "This course provides students a holistic and integrative view of project management. The course covers concepts and skills that are used by IT professionals to propose, plan, secure resources, budget and lead IT project teams to a successful completion of their projects. Prerequisites: COSC 1560 and junior standing.",
+          "This course provides students a holistic and integrative view of project management. " +
+          "The course covers concepts and skills that are used by IT professionals to propose, " +
+          "plan, secure resources, budget and lead IT project teams to a successful completion of " +
+          "their projects. Prerequisites: COSC 1560 and junior standing.\n\nLearning Outcomes:\n\n" +
+          "Upon completion of the course, students will be able to:\n\n1. Identify different types " +
+          "of information systems projects.\n2. Understand the impact of organizational strategy " +
+          "on project management.\n3. Understand project management frameworks and methodologies. " + 
+          "4. Identify project management life cycle methodologies. 5. Understand project planning, " +
+          "monitoring, controlling, and reporting.\n6. Learn about managing risk, stakeholders, " +
+          "quality, suppliers, and changes during the project lifecycle.\n7. Understand the impact " +
+          "of human leadership on project management procedures and outcomes.\n\nGrading System:\n\n- A: 94-100" +
+          "\n- A-: 90-93\n- B+: 87-89\n- B: 83-86\n- B-: 80-82\n- C+: 77-79\n- C: 73-76\n- C-: 70-72\n- D+: 65-69" +
+          "\n- D: 60-64\n- F: 59 and below."
       },
       {
         course: "COSC 3500",
@@ -568,7 +634,19 @@ let instructorsData = [
         credit_hours: 3,
         course_id: 181,
         course_description:
-          "This course provides students a holistic and integrative view of project management. The course covers concepts and skills that are used by IT professionals to propose, plan, secure resources, budget and lead IT project teams to a successful completion of their projects. Prerequisites: COSC 1560 and junior standing.",
+          "This course provides students a holistic and integrative view of project management. " +
+          "The course covers concepts and skills that are used by IT professionals to propose, " +
+          "plan, secure resources, budget and lead IT project teams to a successful completion of " +
+          "their projects. Prerequisites: COSC 1560 and junior standing.\n\nLearning Outcomes:\n\n" +
+          "Upon completion of the course, students will be able to:\n\n1. Identify different types " +
+          "of information systems projects.\n2. Understand the impact of organizational strategy " +
+          "on project management.\n3. Understand project management frameworks and methodologies. " + 
+          "4. Identify project management life cycle methodologies. 5. Understand project planning, " +
+          "monitoring, controlling, and reporting.\n6. Learn about managing risk, stakeholders, " +
+          "quality, suppliers, and changes during the project lifecycle.\n7. Understand the impact " +
+          "of human leadership on project management procedures and outcomes.\n\nGrading System:\n\n- A: 94-100" +
+          "\n- A-: 90-93\n- B+: 87-89\n- B: 83-86\n- B-: 80-82\n- C+: 77-79\n- C: 73-76\n- C-: 70-72\n- D+: 65-69" +
+          "\n- D: 60-64\n- F: 59 and below."
       },
     ],
     instructor_email: "maximonacional20@webster.edu",
@@ -921,7 +999,11 @@ let instructorsData = [
         credit_hours: 3,
         course_id: 204,
         course_description:
-          "This course covers the basic concepts involved in systems analysis, including effective communication, analysis tools and phases of the systems development life cycle. Prerequisite: COSC 1560 or permission of the department.",
+          "This course covers the basic concepts involved in systems analysis, including " +
+          "effective communication, analysis tools and phases of the systems development " +
+          "life cycle. Prerequisite: COSC 1560 or permission of the department.\n\nGrading System:" +
+          "\n\n- A: 94-100\n- A-: 90-93\n- B+: 87-89\n- B: 83-86\n- B-: 80-82\n- C+: 77-79\n- C: 73-76" +
+          "\n- C-: 70-72\n- D+: 65-69\n- D: 60-64\n- F: 59 and below."
       },
       {
         course: "COSC 2810",
@@ -933,7 +1015,11 @@ let instructorsData = [
         credit_hours: 3,
         course_id: 205,
         course_description:
-          "This course covers the basic concepts involved in systems analysis, including effective communication, analysis tools and phases of the systems development life cycle. Prerequisite: COSC 1560 or permission of the department.",
+          "This course covers the basic concepts involved in systems analysis, including " +
+          "effective communication, analysis tools and phases of the systems development " +
+          "life cycle. Prerequisite: COSC 1560 or permission of the department.\n\nGrading System:" +
+          "\n\n- A: 94-100\n- A-: 90-93\n- B+: 87-89\n- B: 83-86\n- B-: 80-82\n- C+: 77-79\n- C: 73-76" +
+          "\n- C-: 70-72\n- D+: 65-69\n- D: 60-64\n- F: 59 and below."
       },
       {
         course: "COSC 2810",
@@ -945,7 +1031,11 @@ let instructorsData = [
         credit_hours: 3,
         course_id: 206,
         course_description:
-          "This course covers the basic concepts involved in systems analysis, including effective communication, analysis tools and phases of the systems development life cycle. Prerequisite: COSC 1560 or permission of the department.",
+          "This course covers the basic concepts involved in systems analysis, including " +
+          "effective communication, analysis tools and phases of the systems development " +
+          "life cycle. Prerequisite: COSC 1560 or permission of the department.\n\nGrading System:" +
+          "\n\n- A: 94-100\n- A-: 90-93\n- B+: 87-89\n- B: 83-86\n- B-: 80-82\n- C+: 77-79\n- C: 73-76" +
+          "\n- C-: 70-72\n- D+: 65-69\n- D: 60-64\n- F: 59 and below."
       },
       {
         course: "COSC 4110",
@@ -957,7 +1047,16 @@ let instructorsData = [
         credit_hours: 3,
         course_id: 207,
         course_description:
-          "This course covers the basic concepts involved in systems analysis, including effective communication, analysis tools and phases of the systems development life cycle. Prerequisite: COSC 1560 or permission of the department.",
+          "This course covers the basic concepts involved in systems analysis, including " +
+          "effective communication, analysis tools and phases of the systems development " +
+          "life cycle. Prerequisite: COSC 1560 or permission of the department.\n\nLearning Outcomes:" +
+          "\n\nBy the end of the course, students will be able to:\n\n1. Explain fundamental " +
+          "concepts of database management systems with a focus on the relational model.\n" +
+          "2. Apply methods for effective database design.\n3. Normalize relational table " +
+          "designs through fourth normal form.\n4. Design, develop, and explain Entity-Relationship " +
+          "models.\n5. Describe the function and significance of database query languages.\n" +
+          "6. Write and execute SQL queries.\n7. Develop and document a logical database design " +
+          "based on functional requirements.",
       },
     ],
     instructor_email: "subairali@webster.edu",
@@ -980,7 +1079,20 @@ let instructorsData = [
         credit_hours: 3,
         course_id: 208,
         course_description:
-          "This course studies the design and implementation of the most common algorithms associated with the basic data types and with some elementary data structures using C++. The relationship of algorithm design to problem solving in general is studied. The course also covers algorithms to improve the robustness and user friendliness of programs. Prerequisites: COSC 1560 with a grade of B- or better, COSC 2610 and COSC 2810*. *Students who have completed 60 credit hours may take COSC 2810 concurrently with COSC 3050",
+          "This course studies the design and implementation of the most common algorithms associated " +
+          "with the basic data types and with some elementary data structures using C++. The relationship " +
+          "of algorithm design to problem solving in general is studied. The course also covers algorithms " +
+          "to improve the robustness and user friendliness of programs. Prerequisites: COSC 1560 with a grade " +
+          "of B- or better, COSC 2610 and COSC 2810*. *Students who have completed 60 credit hours may " +
+          "take COSC 2810 concurrently with COSC 3050\n\nLearning Outcomes:\n\n completion of this course, " +
+          "students will be able to:\n1. Demonstrate familiarity with good software development practices " +
+          "involving design, coding, and testing.\n2. Understand the benefits of using dynamically allocated memory." +
+          "3. Master fundamental programming techniques necessary for implementing, testing, and using " +
+          "List, Stack, and Queue data structures.\n4. Compare and critically assess data structures for " +
+          "specific applications.\n5. Understand the benefits of code reusability through templates." +
+          "\n6. Organize multi-file project outputs effectively.\n\nGrading System:\n\n- A: 94-100\n" +
+          "- A-: 90-93\n- B+: 87-89\n- B: 83-86\n- B-: 80-82\n- C+: 77-79\n- C: 73-76\n- C-: 70-72\n" +
+          "- D+: 65-69\n- D: 60-64\n- F: 59 and below."
       },
       {
         course: "COSC 2670",
@@ -992,7 +1104,30 @@ let instructorsData = [
         credit_hours: 3,
         course_id: 209,
         course_description:
-          "This course is an introduction to computer networks and covers wired, wireless and internet architectures. Students will gain an understanding of network terminology and the various related technologies and protocols. The course provides an analysis of the current and future trends in networking technologies and services and includes an overview of the industry and associated management and strategy issues. Prerequisite: COSC 1550 or permission of the department.",
+          "This course is an introduction to computer networks and covers wired, wireless and " +
+          "internet architectures. Students will gain an understanding of network terminology " +
+          "and the various related technologies and protocols. The course provides an analysis " +
+          "of the current and future trends in networking technologies and services and includes " +
+          "an overview of the industry and associated management and strategy issues. " +
+          "Prerequisite: COSC 1550 or permission of the department.\n\nObjectives:\n\n" +
+          "1. Networking models (OSI and IP).\n2. Network media (wired, optical, and wireless)" +
+          "\n3. Network Architectures and topologies (PAN, LAN/WAN, DMZ, Enclaves, VLAN, NAT, " +
+          "subnetting, supernetting)\n4. Common Network Devices and their role in the network. " +
+          "(Routers, Switches, Hosts, VPNs, Firewalls)\n5. Network Protocols introduction " +
+          "(IP, TCP, UDP, ICMP)\n6. Network Services and protocols introduction " +
+          "(DNS, NTP, VLAN, etc.).\n7. Network Applications and protocols introduction " +
+          "(SMTP, HTTP, VoIP, SSH, etc.).\n8. Use of basic network administration tools." +
+          "\n9.Overview of Network Security Issues.\n\nOutcomes:\n\nAt the completion of this " +
+          "course this student will be able to:\n\n1. Describe the fundamental concepts, " +
+          "technologies, components and issues related to communications and data networks." +  
+          "\n2. Design a basic network architecture given a specific need and set of hosts/clients." +
+          "\n3. Track and identify the packets involved in a simple TCP connection " +
+          "(or a trace of such a connection).\n4. Use a network monitoring tools to " +
+          "observe the flow of packets (e.g., WireShark).\n5. Perform network mapping " +
+          "(enumeration and identification of network components) (e.g., Nmap).\n6. Describe " +
+          "common network vulnerabilities.\n\nGrading:\n\n- A: 94-100%\n- C+: 77-79%\n- A-: 90-93%" +
+          "\n- C: 73-76% (Below C is Fail)\n- B+: 87-89%\n- C-: 70-72%\n- B: 83-86%\n- D+: 65-69%\n" +
+          "- B-: 80-82%\n- D: 60-64%\n- F: Below 60%\nPlease note that Below C grade is Fail for this course."
       },
       {
         course: "COSC 2670",
@@ -1004,7 +1139,30 @@ let instructorsData = [
         credit_hours: 3,
         course_id: 210,
         course_description:
-          "This course is an introduction to computer networks and covers wired, wireless and internet architectures. Students will gain an understanding of network terminology and the various related technologies and protocols. The course provides an analysis of the current and future trends in networking technologies and services and includes an overview of the industry and associated management and strategy issues. Prerequisite: COSC 1550 or permission of the department.",
+          "This course is an introduction to computer networks and covers wired, wireless and " +
+          "internet architectures. Students will gain an understanding of network terminology " +
+          "and the various related technologies and protocols. The course provides an analysis " +
+          "of the current and future trends in networking technologies and services and includes " +
+          "an overview of the industry and associated management and strategy issues. " +
+          "Prerequisite: COSC 1550 or permission of the department.\n\nObjectives:\n\n" +
+          "1. Networking models (OSI and IP).\n2. Network media (wired, optical, and wireless)" +
+          "\n3. Network Architectures and topologies (PAN, LAN/WAN, DMZ, Enclaves, VLAN, NAT, " +
+          "subnetting, supernetting)\n4. Common Network Devices and their role in the network. " +
+          "(Routers, Switches, Hosts, VPNs, Firewalls)\n5. Network Protocols introduction " +
+          "(IP, TCP, UDP, ICMP)\n6. Network Services and protocols introduction " +
+          "(DNS, NTP, VLAN, etc.).\n7. Network Applications and protocols introduction " +
+          "(SMTP, HTTP, VoIP, SSH, etc.).\n8. Use of basic network administration tools." +
+          "\n9.Overview of Network Security Issues.\n\nOutcomes:\n\nAt the completion of this " +
+          "course this student will be able to:\n\n1. Describe the fundamental concepts, " +
+          "technologies, components and issues related to communications and data networks." +  
+          "\n2. Design a basic network architecture given a specific need and set of hosts/clients." +
+          "\n3. Track and identify the packets involved in a simple TCP connection " +
+          "(or a trace of such a connection).\n4. Use a network monitoring tools to " +
+          "observe the flow of packets (e.g., WireShark).\n5. Perform network mapping " +
+          "(enumeration and identification of network components) (e.g., Nmap).\n6. Describe " +
+          "common network vulnerabilities.\n\nGrading:\n\n- A: 94-100%\n- C+: 77-79%\n- A-: 90-93%" +
+          "\n- C: 73-76% (Below C is Fail)\n- B+: 87-89%\n- C-: 70-72%\n- B: 83-86%\n- D+: 65-69%\n" +
+          "- B-: 80-82%\n- D: 60-64%\n- F: Below 60%\nPlease note that Below C grade is Fail for this course."
       },
       {
         course: "BUSN 4120",
@@ -1028,8 +1186,19 @@ let instructorsData = [
         credit_hours: 3,
         course_id: 212,
         course_description:
-          "This course introduces students to the C++ language in order to teach programming as a systematic discipline and as a problem solving tool. Acquaints students with fundamental concepts of computers, information processing, algorithms and programs. Only offered in a 16-week format. May be repeated once for credit.",
-      },
+          "Introduces accounting with an emphasis on systemic thinking and problem solving " +
+          "as the relationships between business events and financial statements are explored. " +
+          "There will be an extensive use of technology, with an emphasis on Excel, that will be" +
+          "integrated throughout the course as the students develop an understanding of how " +
+          "any given business event impacts an organization’s financial statements. A primary " +
+          "objective of this course is to examine the use of financial accounting information " +
+          "for decision making in an organization.\n\nOutcomes: Upon completion of this course, " +
+          "students will be able to:\n\n1. Write short programs in pseudocode and C++.\n2. Write " +
+          "programs that involve decision-making (if statements) and loops (while, do-while, " + 
+          "and for loops).\n3. Read a simple C++ program and predict its outcome.\n\nGrading System:" +
+          "\n\n- A: 94-100\n- A-: 90-93\n- B+: 87-89\n- B: 83-86\n- B-: 80-82\n- C+: 77-79\n- C: 73-76\n" +
+          "- C-: 70-72\n- D+: 65-69\n- D: 60-64\n- F: 59 and below.\nStudents need to get at least B- to pass this course."
+        },
     ],
     instructor_email: "nitingoje@webster.edu",
     office_hours: {
@@ -1122,7 +1291,18 @@ let instructorsData = [
         credit_hours: 3,
         course_id: 218,
         course_description:
-          "This course investigates different computer languages, offered under different subtitles. May be repeated for credit if content differs.",
+          "This course investigates different computer languages, offered under different subtitles. " +
+          "May be repeated for credit if content differs.\n\nOutcomes:\n\nThis course covers " +
+          "programming and problem solving using Python. After completion of this course this " +
+          "student will be able to:\n\n1. Interpret the fundamental Python syntax and semantics " +
+          "and be fluent in the use of Python control flow statements.\n2.Express proﬁciency in " +
+          "the handling of strings and functions.\n3.Determine the methods to create and manipulate " +
+          "Python programs by utilizing the data structures like lists, dictionaries, tuples and sets." +
+          "\n3.Identify the commonly used operations involving ﬁle systems and regular expressions.\n" +
+          "4.Articulate the Object-Oriented Programming concepts such as encapsulation, inheritance and " +
+          "polymorphism as used in Python.\n5.Develop graphical user interfaces and sophisticated operational programs." +
+          "\n\nGrading:\n\n- A: 94-100\n- A-: 90-93\n- B+: 87-89\n- B: 83-86\n- B-: 80-82\n- C+: 77-79\n- C: 73-76\n" +
+          "- C-: 70-72\n- D+: 65-69\n- D: 60-64\n- F: 59 and below.\nPassing rate 73 percents and above."
       },
       {
         course: "COSC 2110",
@@ -1134,7 +1314,18 @@ let instructorsData = [
         credit_hours: 3,
         course_id: 219,
         course_description:
-          "This course investigates different computer languages, offered under different subtitles. May be repeated for credit if content differs.",
+          "This course investigates different computer languages, offered under different subtitles. " +
+          "May be repeated for credit if content differs.\n\nOutcomes:\n\nThis course covers " +
+          "programming and problem solving using Python. After completion of this course this " +
+          "student will be able to:\n\n1. Interpret the fundamental Python syntax and semantics " +
+          "and be fluent in the use of Python control flow statements.\n2.Express proﬁciency in " +
+          "the handling of strings and functions.\n3.Determine the methods to create and manipulate " +
+          "Python programs by utilizing the data structures like lists, dictionaries, tuples and sets." +
+          "\n3.Identify the commonly used operations involving ﬁle systems and regular expressions.\n" +
+          "4.Articulate the Object-Oriented Programming concepts such as encapsulation, inheritance and " +
+          "polymorphism as used in Python.\n5.Develop graphical user interfaces and sophisticated operational programs." +
+          "\n\nGrading:\n\n- A: 94-100\n- A-: 90-93\n- B+: 87-89\n- B: 83-86\n- B-: 80-82\n- C+: 77-79\n- C: 73-76\n" +
+          "- C-: 70-72\n- D+: 65-69\n- D: 60-64\n- F: 59 and below.\nPassing rate 73 percents and above."
       },
       {
         course: "COSC 2110",
@@ -1146,7 +1337,18 @@ let instructorsData = [
         credit_hours: 3,
         course_id: 220,
         course_description:
-          "This course investigates different computer languages, offered under different subtitles. May be repeated for credit if content differs.",
+          "This course investigates different computer languages, offered under different subtitles. " +
+          "May be repeated for credit if content differs.\n\nOutcomes:\n\nThis course covers " +
+          "programming and problem solving using Python. After completion of this course this " +
+          "student will be able to:\n\n1. Interpret the fundamental Python syntax and semantics " +
+          "and be fluent in the use of Python control flow statements.\n2.Express proﬁciency in " +
+          "the handling of strings and functions.\n3.Determine the methods to create and manipulate " +
+          "Python programs by utilizing the data structures like lists, dictionaries, tuples and sets." +
+          "\n3.Identify the commonly used operations involving ﬁle systems and regular expressions.\n" +
+          "4.Articulate the Object-Oriented Programming concepts such as encapsulation, inheritance and " +
+          "polymorphism as used in Python.\n5.Develop graphical user interfaces and sophisticated operational programs." +
+          "\n\nGrading:\n\n- A: 94-100\n- A-: 90-93\n- B+: 87-89\n- B: 83-86\n- B-: 80-82\n- C+: 77-79\n- C: 73-76\n" +
+          "- C-: 70-72\n- D+: 65-69\n- D: 60-64\n- F: 59 and below.\nPassing rate 73 percents and above."
       },
       {
         course: "COSC 2110",
@@ -1158,7 +1360,18 @@ let instructorsData = [
         credit_hours: 3,
         course_id: 221,
         course_description:
-          "This course investigates different computer languages, offered under different subtitles. May be repeated for credit if content differs.",
+          "This course investigates different computer languages, offered under different subtitles. " +
+          "May be repeated for credit if content differs.\n\nOutcomes:\n\nThis course covers " +
+          "programming and problem solving using Python. After completion of this course this " +
+          "student will be able to:\n\n1. Interpret the fundamental Python syntax and semantics " +
+          "and be fluent in the use of Python control flow statements.\n2.Express proﬁciency in " +
+          "the handling of strings and functions.\n3.Determine the methods to create and manipulate " +
+          "Python programs by utilizing the data structures like lists, dictionaries, tuples and sets." +
+          "\n3.Identify the commonly used operations involving ﬁle systems and regular expressions.\n" +
+          "4.Articulate the Object-Oriented Programming concepts such as encapsulation, inheritance and " +
+          "polymorphism as used in Python.\n5.Develop graphical user interfaces and sophisticated operational programs." +
+          "\n\nGrading:\n\n- A: 94-100\n- A-: 90-93\n- B+: 87-89\n- B: 83-86\n- B-: 80-82\n- C+: 77-79\n- C: 73-76\n" +
+          "- C-: 70-72\n- D+: 65-69\n- D: 60-64\n- F: 59 and below.\nPassing rate 73 percents and above."
       },
     ],
     instructor_email: "sanjarbekov@webster.edu",
@@ -1369,7 +1582,24 @@ let instructorsData = [
         credit_hours: 3,
         course_id: 234,
         course_description:
-          "This course uses the C++ language to introduce students to programming concepts such as abstract data types, use of classes and objects, pointers and advanced file operations. Only offered in a 16-week format. May be repeated once for credit. Prerequisite: COSC 1550 with grade of B- or better.",
+          "This course uses the C++ language to introduce students to programming concepts " +
+          "such as abstract data types, use of classes and objects, pointers and advanced " +
+          "file operations. Only offered in a 16-week format. May be repeated once for " +
+          "credit. Prerequisite: COSC 1550 with grade of B- or better.\n\nOutcomes:\n\nAt the completion " +
+          "of this course this student will be able to:\n\n1. Write programs in the C++ programming " +
+          "language using arrays, pointers, structured data, and file operations.\n2. Analyze problems " +
+          "and design programming solutions for these situations.\n3. Write programs using the " +
+          "Department Style Guidelines.\n4. Use pointer variables, understand the relationship " +
+          "between arrays and pointers, do pointer arithmetic, and use pointers as parameters.\n5. Use " +
+          "the character macros available in cctype and the cstring functions available in string " +
+          "6. Declare, initialize, and process the abstract data type, struct, including the use " +
+          "of arrays of structures, structures in functions, and pointers to structures.\n7. Write code " +
+          "to read and write to text and binary files.\n8. Declare a class with public and private " +
+          "members and functions.\n9. Use class constructors and destructors.\n\nGrading:\n\n- A: 94-100\n" +
+          "- A-: 90-93\n- B+: 87-89\n- B: 83-86\n- B-: 80-82\n- C+: 77-79\n- C: 73-76\n- C-: 70-72\n" +
+          "- D+: 65-69\n- D: 60-64\n- F: 59 and below.\nStudents need to earn B-/80% in order to progress " +
+          "in their academic track. If a student receives less than 80%/B-, that student cannot be " +
+          "registered, and would need to repeat the course."
       },
       {
         course: "COSC 1560",
@@ -1381,7 +1611,24 @@ let instructorsData = [
         credit_hours: 3,
         course_id: 235,
         course_description:
-          "This course uses the C++ language to introduce students to programming concepts such as abstract data types, use of classes and objects, pointers and advanced file operations. Only offered in a 16-week format. May be repeated once for credit. Prerequisite: COSC 1550 with grade of B- or better.",
+          "This course uses the C++ language to introduce students to programming concepts " +
+          "such as abstract data types, use of classes and objects, pointers and advanced " +
+          "file operations. Only offered in a 16-week format. May be repeated once for " +
+          "credit. Prerequisite: COSC 1550 with grade of B- or better.\n\nOutcomes:\n\nAt the completion " +
+          "of this course this student will be able to:\n\n1. Write programs in the C++ programming " +
+          "language using arrays, pointers, structured data, and file operations.\n2. Analyze problems " +
+          "and design programming solutions for these situations.\n3. Write programs using the " +
+          "Department Style Guidelines.\n4. Use pointer variables, understand the relationship " +
+          "between arrays and pointers, do pointer arithmetic, and use pointers as parameters.\n5. Use " +
+          "the character macros available in cctype and the cstring functions available in string " +
+          "6. Declare, initialize, and process the abstract data type, struct, including the use " +
+          "of arrays of structures, structures in functions, and pointers to structures.\n7. Write code " +
+          "to read and write to text and binary files.\n8. Declare a class with public and private " +
+          "members and functions.\n9. Use class constructors and destructors.\n\nGrading:\n\n- A: 94-100\n" +
+          "- A-: 90-93\n- B+: 87-89\n- B: 83-86\n- B-: 80-82\n- C+: 77-79\n- C: 73-76\n- C-: 70-72\n" +
+          "- D+: 65-69\n- D: 60-64\n- F: 59 and below.\nStudents need to earn B-/80% in order to progress " +
+          "in their academic track. If a student receives less than 80%/B-, that student cannot be " +
+          "registered, and would need to repeat the course."
       },
       {
         course: "COSC 1560",
@@ -1393,7 +1640,24 @@ let instructorsData = [
         credit_hours: 3,
         course_id: 236,
         course_description:
-          "This course uses the C++ language to introduce students to programming concepts such as abstract data types, use of classes and objects, pointers and advanced file operations. Only offered in a 16-week format. May be repeated once for credit. Prerequisite: COSC 1550 with grade of B- or better.",
+          "This course uses the C++ language to introduce students to programming concepts " +
+          "such as abstract data types, use of classes and objects, pointers and advanced " +
+          "file operations. Only offered in a 16-week format. May be repeated once for " +
+          "credit. Prerequisite: COSC 1550 with grade of B- or better.\n\nOutcomes:\n\nAt the completion " +
+          "of this course this student will be able to:\n\n1. Write programs in the C++ programming " +
+          "language using arrays, pointers, structured data, and file operations.\n2. Analyze problems " +
+          "and design programming solutions for these situations.\n3. Write programs using the " +
+          "Department Style Guidelines.\n4. Use pointer variables, understand the relationship " +
+          "between arrays and pointers, do pointer arithmetic, and use pointers as parameters.\n5. Use " +
+          "the character macros available in cctype and the cstring functions available in string " +
+          "6. Declare, initialize, and process the abstract data type, struct, including the use " +
+          "of arrays of structures, structures in functions, and pointers to structures.\n7. Write code " +
+          "to read and write to text and binary files.\n8. Declare a class with public and private " +
+          "members and functions.\n9. Use class constructors and destructors.\n\nGrading:\n\n- A: 94-100\n" +
+          "- A-: 90-93\n- B+: 87-89\n- B: 83-86\n- B-: 80-82\n- C+: 77-79\n- C: 73-76\n- C-: 70-72\n" +
+          "- D+: 65-69\n- D: 60-64\n- F: 59 and below.\nStudents need to earn B-/80% in order to progress " +
+          "in their academic track. If a student receives less than 80%/B-, that student cannot be " +
+          "registered, and would need to repeat the course."
       },
       {
         course: "COSC 1570",
@@ -1405,7 +1669,28 @@ let instructorsData = [
         credit_hours: 3,
         course_id: 237,
         course_description:
-          "This course covers topics including number systems, computer arithmetic, binary, octal, hexadecimal, floating point operations, sets and Boolean algebra.",
+          "This course covers topics including number systems, computer arithmetic, binary, octal, " +
+          "hexadecimal, floating point operations, sets and Boolean algebra. Prerequisites: COSC " +
+          "1550 and COSC 1570.\n\nOutcomes:\n\nAt the successful completion of this course this " +
+          "student will be able to:\n\n1. Classify numbers as Natural, Integer, Rational, Irrational," + 
+          "or Real.\n3. Simplify expressions with exponents.\n4. Interpret a programming assignment statement.\n" +
+          "3. Identify the properties of each system studied\n5. Solve simple algebraic equations.\n" +
+          "6. State the place values of the decimal, binary, octal, and hexadecimal number systems " +
+          "and be able to convert a rational number from one system to another.\n7. Add, subtract, multiply, " +
+          "and divide in multiple base number systems.\n8. Find the two’s complement of integers.\n9. Explain " +
+          "how text is stored as ASCII codes.\n10. Convert values to a binary-coded decimal format.\n11. Convert " +
+          "real number values to a normalized exponential notation format.\n12. Explain bit-mapped graphic storage." +
+          "\n13.Find a value based on a stored reference (memory address) of the value.\n14. Use basic set " +
+          "terminology and operations.\n15. Interpret and create Venn Diagrams.\n16. Use basic logic " +
+          "terminology and operations.\n17. Create truth tables for any combination of AND, OR, NOT, NAND, NOR, or EOR\n" +
+          "18. Use basic Boolean Algebra terminology and operations.\n19. Create Boolean tables for any combination " +
+          "of multiplication, addition, or complement operations.\n20. Draw and interpret Boolean networks " +
+          "and switching networks (logic gates).\n21. Use properties and Karnaugh maps to simplify Boolean expressions." +
+          "\n22. Compute modular arithmetic operations.\n23. Add, subtract, or transpose a matrix.\n\nGrading:\n\n" +
+          "- A: 94-100\n- A-: 90-93\n- B+: 87-89\n- B: 83-86\n- B-: 80-82\n- C+: 77-79\n- C: 73-76\n- C-: 70-72\n" +
+          "- D+: 65-69\n- D: 60-64\n- F: 59 and below.\nStudents need to earn C-/70% in order to progress in their " +
+          "academic track. If a student receives less than 70%/C-, that student cannot be registered, and would " +
+          "need to repeat the course."
       },
       {
         course: "COSC 1570",
@@ -1417,7 +1702,28 @@ let instructorsData = [
         credit_hours: 3,
         course_id: 238,
         course_description:
-          "This course covers topics including number systems, computer arithmetic, binary, octal, hexadecimal, floating point operations, sets and Boolean algebra.",
+          "This course covers topics including number systems, computer arithmetic, binary, octal, " +
+          "hexadecimal, floating point operations, sets and Boolean algebra. Prerequisites: COSC " +
+          "1550 and COSC 1570.\n\nOutcomes:\n\nAt the successful completion of this course this " +
+          "student will be able to:\n\n1. Classify numbers as Natural, Integer, Rational, Irrational," + 
+          "or Real.\n3. Simplify expressions with exponents.\n4. Interpret a programming assignment statement.\n" +
+          "3. Identify the properties of each system studied\n5. Solve simple algebraic equations.\n" +
+          "6. State the place values of the decimal, binary, octal, and hexadecimal number systems " +
+          "and be able to convert a rational number from one system to another.\n7. Add, subtract, multiply, " +
+          "and divide in multiple base number systems.\n8. Find the two’s complement of integers.\n9. Explain " +
+          "how text is stored as ASCII codes.\n10. Convert values to a binary-coded decimal format.\n11. Convert " +
+          "real number values to a normalized exponential notation format.\n12. Explain bit-mapped graphic storage." +
+          "\n13.Find a value based on a stored reference (memory address) of the value.\n14. Use basic set " +
+          "terminology and operations.\n15. Interpret and create Venn Diagrams.\n16. Use basic logic " +
+          "terminology and operations.\n17. Create truth tables for any combination of AND, OR, NOT, NAND, NOR, or EOR\n" +
+          "18. Use basic Boolean Algebra terminology and operations.\n19. Create Boolean tables for any combination " +
+          "of multiplication, addition, or complement operations.\n20. Draw and interpret Boolean networks " +
+          "and switching networks (logic gates).\n21. Use properties and Karnaugh maps to simplify Boolean expressions." +
+          "\n22. Compute modular arithmetic operations.\n23. Add, subtract, or transpose a matrix.\n\nGrading:\n\n" +
+          "- A: 94-100\n- A-: 90-93\n- B+: 87-89\n- B: 83-86\n- B-: 80-82\n- C+: 77-79\n- C: 73-76\n- C-: 70-72\n" +
+          "- D+: 65-69\n- D: 60-64\n- F: 59 and below.\nStudents need to earn C-/70% in order to progress in their " +
+          "academic track. If a student receives less than 70%/C-, that student cannot be registered, and would " +
+          "need to repeat the course."
       },
     ],
     instructor_email: "debasisdas@webster.edu",
@@ -1440,7 +1746,18 @@ let instructorsData = [
         credit_hours: 3,
         course_id: 239,
         course_description:
-          "This course introduces students to the C++ language in order to teach programming as a systematic discipline and as a problem solving tool. Acquaints students with fundamental concepts of computers, information processing, algorithms and programs. Only offered in a 16-week format. May be repeated once for credit.",
+          "Introduces accounting with an emphasis on systemic thinking and problem solving " +
+          "as the relationships between business events and financial statements are explored. " +
+          "There will be an extensive use of technology, with an emphasis on Excel, that will be" +
+          "integrated throughout the course as the students develop an understanding of how " +
+          "any given business event impacts an organization’s financial statements. A primary " +
+          "objective of this course is to examine the use of financial accounting information " +
+          "for decision making in an organization.\n\nOutcomes: Upon completion of this course, " +
+          "students will be able to:\n\n1. Write short programs in pseudocode and C++.\n2. Write " +
+          "programs that involve decision-making (if statements) and loops (while, do-while, " + 
+          "and for loops).\n3. Read a simple C++ program and predict its outcome.\n\nGrading System:" +
+          "\n\n- A: 94-100\n- A-: 90-93\n- B+: 87-89\n- B: 83-86\n- B-: 80-82\n- C+: 77-79\n- C: 73-76\n" +
+          "- C-: 70-72\n- D+: 65-69\n- D: 60-64\n- F: 59 and below. Students need to get at least B- to pass this course."
       },
       {
         course: "COSC 1550",
@@ -1452,7 +1769,18 @@ let instructorsData = [
         credit_hours: 3,
         course_id: 240,
         course_description:
-          "This course introduces students to the C++ language in order to teach programming as a systematic discipline and as a problem solving tool. Acquaints students with fundamental concepts of computers, information processing, algorithms and programs. Only offered in a 16-week format. May be repeated once for credit.",
+          "Introduces accounting with an emphasis on systemic thinking and problem solving " +
+          "as the relationships between business events and financial statements are explored. " +
+          "There will be an extensive use of technology, with an emphasis on Excel, that will be" +
+          "integrated throughout the course as the students develop an understanding of how " +
+          "any given business event impacts an organization’s financial statements. A primary " +
+          "objective of this course is to examine the use of financial accounting information " +
+          "for decision making in an organization.\n\nOutcomes: Upon completion of this course, " +
+          "students will be able to:\n\n1. Write short programs in pseudocode and C++.\n2. Write " +
+          "programs that involve decision-making (if statements) and loops (while, do-while, " + 
+          "and for loops).\n3. Read a simple C++ program and predict its outcome.\n\nGrading System:" +
+          "\n\n- A: 94-100\n- A-: 90-93\n- B+: 87-89\n- B: 83-86\n- B-: 80-82\n- C+: 77-79\n- C: 73-76\n" +
+          "- C-: 70-72\n- D+: 65-69\n- D: 60-64\n- F: 59 and below. Students need to get at least B- to pass this course."
       },
       {
         course: "COSC 1550",
@@ -1464,7 +1792,18 @@ let instructorsData = [
         credit_hours: 3,
         course_id: 241,
         course_description:
-          "This course introduces students to the C++ language in order to teach programming as a systematic discipline and as a problem solving tool. Acquaints students with fundamental concepts of computers, information processing, algorithms and programs. Only offered in a 16-week format. May be repeated once for credit.",
+          "Introduces accounting with an emphasis on systemic thinking and problem solving " +
+          "as the relationships between business events and financial statements are explored. " +
+          "There will be an extensive use of technology, with an emphasis on Excel, that will be" +
+          "integrated throughout the course as the students develop an understanding of how " +
+          "any given business event impacts an organization’s financial statements. A primary " +
+          "objective of this course is to examine the use of financial accounting information " +
+          "for decision making in an organization.\n\nOutcomes: Upon completion of this course, " +
+          "students will be able to:\n\n1. Write short programs in pseudocode and C++.\n2. Write " +
+          "programs that involve decision-making (if statements) and loops (while, do-while, " + 
+          "and for loops).\n3. Read a simple C++ program and predict its outcome.\n\nGrading System:" +
+          "\n\n- A: 94-100\n- A-: 90-93\n- B+: 87-89\n- B: 83-86\n- B-: 80-82\n- C+: 77-79\n- C: 73-76\n" +
+          "- C-: 70-72\n- D+: 65-69\n- D: 60-64\n- F: 59 and below. Students need to get at least B- to pass this course."
       },
       {
         course: "COSC 1550",
@@ -1476,7 +1815,18 @@ let instructorsData = [
         credit_hours: 3,
         course_id: 242,
         course_description:
-          "This course introduces students to the C++ language in order to teach programming as a systematic discipline and as a problem solving tool. Acquaints students with fundamental concepts of computers, information processing, algorithms and programs. Only offered in a 16-week format. May be repeated once for credit.",
+          "Introduces accounting with an emphasis on systemic thinking and problem solving " +
+          "as the relationships between business events and financial statements are explored. " +
+          "There will be an extensive use of technology, with an emphasis on Excel, that will be" +
+          "integrated throughout the course as the students develop an understanding of how " +
+          "any given business event impacts an organization’s financial statements. A primary " +
+          "objective of this course is to examine the use of financial accounting information " +
+          "for decision making in an organization.\n\nOutcomes: Upon completion of this course, " +
+          "students will be able to:\n\n1. Write short programs in pseudocode and C++.\n2. Write " +
+          "programs that involve decision-making (if statements) and loops (while, do-while, " + 
+          "and for loops).\n3. Read a simple C++ program and predict its outcome.\n\nGrading System:" +
+          "\n\n- A: 94-100\n- A-: 90-93\n- B+: 87-89\n- B: 83-86\n- B-: 80-82\n- C+: 77-79\n- C: 73-76\n" +
+          "- C-: 70-72\n- D+: 65-69\n- D: 60-64\n- F: 59 and below. Students need to get at least B- to pass this course."
       },
       {
         course: "COSC 1550",
@@ -1488,7 +1838,18 @@ let instructorsData = [
         credit_hours: 3,
         course_id: 243,
         course_description:
-          "This course introduces students to the C++ language in order to teach programming as a systematic discipline and as a problem solving tool. Acquaints students with fundamental concepts of computers, information processing, algorithms and programs. Only offered in a 16-week format. May be repeated once for credit.",
+          "Introduces accounting with an emphasis on systemic thinking and problem solving " +
+          "as the relationships between business events and financial statements are explored. " +
+          "There will be an extensive use of technology, with an emphasis on Excel, that will be" +
+          "integrated throughout the course as the students develop an understanding of how " +
+          "any given business event impacts an organization’s financial statements. A primary " +
+          "objective of this course is to examine the use of financial accounting information " +
+          "for decision making in an organization.\n\nOutcomes: Upon completion of this course, " +
+          "students will be able to:\n\n1. Write short programs in pseudocode and C++.\n2. Write " +
+          "programs that involve decision-making (if statements) and loops (while, do-while, " + 
+          "and for loops).\n3. Read a simple C++ program and predict its outcome.\n\nGrading System:" +
+          "\n\n- A: 94-100\n- A-: 90-93\n- B+: 87-89\n- B: 83-86\n- B-: 80-82\n- C+: 77-79\n- C: 73-76\n" +
+          "- C-: 70-72\n- D+: 65-69\n- D: 60-64\n- F: 59 and below. Students need to get at least B- to pass this course."
       },
     ],
     instructor_email: "yogeshkakde@webster.edu",
@@ -1501,14 +1862,14 @@ let instructorsData = [
 ]
 
 // FIRST SCRIPT
-// for (let i = 0; i < instructorsData.length; i++) {
-//     instructors.create({
-//         instructor_name: instructorsData[i]["instructor_name"],
-//         instructor_courses: instructorsData[i]["instructor_courses"],
-//         instructor_email: instructorsData[i]["instructor_email"],
-//         office_hours: instructorsData[i]["office_hours"],
-//     });
-// }
+for (let i = 0; i < instructorsData.length; i++) {
+    instructors.create({
+        instructor_name: instructorsData[i]["instructor_name"],
+        instructor_courses: instructorsData[i]["instructor_courses"],
+        instructor_email: instructorsData[i]["instructor_email"],
+        office_hours: instructorsData[i]["office_hours"],
+    });
+}
 
 // SECOND SCRIPT
 // for (let i = 0; i < instructorsData.length; i++)

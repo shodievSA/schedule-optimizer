@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import { useNavigate, useLocation, useParams } from "react-router-dom";
 import StudentFeedbackComment from "../components/StudentFeedbackComment"
 import { IoIosArrowBack } from "react-icons/io";
+import styles from "./StudentsFeedback.module.css"
 
 export default function StudentsFeedback() {
 
@@ -100,7 +101,8 @@ export default function StudentsFeedback() {
                 )
             }
             <dialog 
-            className="modal backdrop-blur-2xl py-8" ref={feedbackModalRef}
+            className={styles['modal-window']} 
+            ref={feedbackModalRef}
             >
                 {
                     serverMessage === null ? (
