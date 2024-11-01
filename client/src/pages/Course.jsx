@@ -27,6 +27,9 @@ function Course() {
     term,
   } = location.state
 
+  const formatted_course_description = course_description.replace(/\n\n/g, "<br><br>")
+                                                         .replace(/\n/g, "<br>")
+
   async function addNewCourse() {
     const newCourse = {
       course_id: courseId,
@@ -77,7 +80,7 @@ function Course() {
           Student Feedback
         </button>
       </div>
-      <div className="flex gap-x-16 pt-14 grow">
+      <div className="flex gap-x-16 py-14 grow">
         <div className={styles["instructor-details"]}>
           <div className={styles["image-container"]}>
             <img
@@ -88,9 +91,12 @@ function Course() {
           </div>
           <h1>{instructor}</h1>
         </div>
-        <div className={styles["course-description"]}>
-          <h1>About the course:</h1>
-          <p className="text-ellipsis overflow-hidden">{course_description}</p>
+        <div 
+        className={styles["course-description"]}
+        dangerouslySetInnerHTML={{
+          __html: `<h1>About the course:</h1><p>${formatted_course_description}</p>`,
+        }}
+        >
         </div>
       </div>
       <button

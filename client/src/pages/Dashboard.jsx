@@ -10,6 +10,7 @@ function Dashboard() {
   const { theme, changeTheme } = useContext(ThemeContext);
   const [courses, setCourses] = useState([]);
   const [studentName, setStudentName] = useState("");
+  const [isScheduleEmpty, setIsScheduleEmpty] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -17,11 +18,17 @@ function Dashboard() {
       async function getStudents() {
 
           try {
-            const res = await fetch("http://localhost:3000/api/v1/user-courses");
-            const data = await res.json();
+              const res = await fetch("http://localhost:3000/api/v1/user-courses");
+              const data = await res.json();
 
-            setCourses(data.data["student_courses"]);
-            setStudentName(data.data["student_name"]);
+              if (data.data['student_courses'].length > 0) {
+                  setCourses(data.data["student_courses"]);
+                  setIsScheduleEmpty(false);
+              } else {
+                  setIsScheduleEmpty(true);
+              }
+
+              setStudentName(data.data["student_name"]);
           } catch (err) {
             console.error(err);
           }
@@ -60,7 +67,7 @@ function Dashboard() {
   }
 
   return (
-    <div className="flex flex-col gap-y-12">
+    <div className="flex flex-col gap-y-12 h-full">
         <div className="flex justify-between items-center">
             <h1 className="text-3xl font-semibold whitespace-pre">
               {studentName !== "" ? (
@@ -171,57 +178,66 @@ function Dashboard() {
               </div>
             </div>
         </div>
-      {courses.length > 0 ? (
-        <table className={styles['user-courses-table']}>
-          <thead className={styles['table-header']}>
-            <tr className="text-center font-medium">
-              <th className="p-6">Course No.</th>
-              <th className="p-6">Course</th>
-              <th className="p-6">Section</th>
-              <th className="p-6">Title</th>
-              <th className="p-6">Instructor</th>
-              <th className="p-6">Hours</th>
-              <th className="p-6">Term</th>
-            </tr>
-          </thead>
-          <tbody className={styles['table-body']}>
-            {courses.map((course, index) => {
-              return (
-                <tr
-                  key={course.course_id}
-                  className="hover:bg-base-300 cursor-pointer text-center text-base font-medium"
-                  onClick={() =>
-                    handleRedirection(
-                      course.course,
-                      course.section,
-                      course.title,
-                      course.instructor,
-                      course.credit_hours,
-                      course.term,
-                      course.course_description,
-                      course.course_id,
-                      course.days,
-                      course.times
-                    )
-                  }
-                >
-                  <td className="py-8 px-8">{index + 1}</td>
-                  <td className="py-8 px-8">{course.course}</td>
-                  <td className="py-8 px-8">{course.section}</td>
-                  <td className="py-8 px-8">{course.title}</td>
-                  <td className="py-8 px-8">{course.instructor}</td>
-                  <td className="py-8 px-8">{course.credit_hours}</td>
-                  <td className="py-8 px-8">{course.term}</td>
+        {
+          courses.length > 0 ? (
+            <table className={styles['user-courses-table']}>
+              <thead className={styles['table-header']}>
+                <tr className="text-center font-medium">
+                  <th className="p-6">Course No.</th>
+                  <th className="p-6">Course</th>
+                  <th className="p-6">Section</th>
+                  <th className="p-6">Title</th>
+                  <th className="p-6">Instructor</th>
+                  <th className="p-6">Hours</th>
+                  <th className="p-6">Term</th>
                 </tr>
-              )
-            })}
-          </tbody>
-        </table>
-      ) : (
-        <SkeletonTable />
-      )}
+              </thead>
+              <tbody className={styles['table-body']}>
+                {courses.map((course, index) => {
+                  return (
+                    <tr
+                      key={course.course_id}
+                      className="hover:bg-base-300 cursor-pointer text-center text-base font-medium"
+                      onClick={() =>
+                        handleRedirection(
+                          course.course,
+                          course.section,
+                          course.title,
+                          course.instructor,
+                          course.credit_hours,
+                          course.term,
+                          course.course_description,
+                          course.course_id,
+                          course.days,
+                          course.times
+                        )
+                      }
+                    >
+                      <td className="py-8 px-8">{index + 1}</td>
+                      <td className="py-8 px-8">{course.course}</td>
+                      <td className="py-8 px-8">{course.section}</td>
+                      <td className="py-8 px-8">{course.title}</td>
+                      <td className="py-8 px-8">{course.instructor}</td>
+                      <td className="py-8 px-8">{course.credit_hours}</td>
+                      <td className="py-8 px-8">{course.term}</td>
+                    </tr>
+                  )
+                })}
+              </tbody>
+            </table>
+          ) : (   
+            isScheduleEmpty == true ? (
+                <div className="flex grow items-center justify-center">
+                    <h1 className="text-4xl font-medium">
+                        Your schedule is currently empty :(
+                    </h1>
+                </div>
+            ) : (
+              <SkeletonTable />
+            )
+          )}
     </div>
   )
 }
 
-export default Dashboard
+export default Dashboard;

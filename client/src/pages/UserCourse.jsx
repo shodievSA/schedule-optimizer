@@ -28,6 +28,10 @@ export default function UserCourse() {
 
     } = location.state;
 
+    const formatted_course_description = course_description
+                                        .replace(/\n\n/g, "<br><br>")
+                                        .replace(/\n/g, "<br>")
+
     async function withdrawCourse() {
 
         let res = await fetch("http://localhost:3000/api/v1/delete-user-course", {
@@ -75,9 +79,12 @@ export default function UserCourse() {
                     </div>
                     <h1>{instructor}</h1>
                 </div>
-                <div className={styles["course-description"]}>
-                    <h1>About the course:</h1>
-                    <p>{course_description}</p>
+                <div 
+                className={styles["course-description"]}
+                dangerouslySetInnerHTML={{
+                    __html: `<h1>About the course:</h1><p>${formatted_course_description}</p>`,
+                }}
+                >
                 </div>
             </div>
             <button 

@@ -20,7 +20,7 @@
   @apply rounded-md;
 }
 .course-description {
-  @apply flex flex-col gap-y-5 overflow-y-auto
+  @apply flex flex-col gap-y-5 overflow-y-auto max-h-80
 }
 .course-description h1 {
   @apply text-2xl font-medium
