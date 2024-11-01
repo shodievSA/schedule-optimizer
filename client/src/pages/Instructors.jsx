@@ -14,9 +14,7 @@ function Instructors() {
         const res = await fetch("http://localhost:3000/api/v1/instructors")
         const data = await res.json()
 
-        console.log(data.data)
         setInstructors(data.data)
-        setSearchResults(data.data)
       } catch (err) {
         console.error(err)
       }
@@ -37,8 +35,6 @@ function Instructors() {
       )
     }
   }
-
-  console.log(instructors)
 
   function handleRedirection(
     instructorId,
@@ -64,7 +60,7 @@ function Instructors() {
           <input
             type="text"
             className="grow"
-            placeholder="Search instructors here"
+            placeholder="Search instructors by their name"
             onChange={handleInstructorSearch}
           />
           <svg
@@ -86,15 +82,15 @@ function Instructors() {
           <table className={styles["instructors-table"]}>
             <thead className={styles["table-header"]}>
               <tr>
-                <th>Avatar</th>
                 <th>Full name</th>
                 <th>Office hours</th>
                 <th>Email</th>
               </tr>
             </thead>
             <tbody className={styles["table-body"]}>
-              {searchResults !== null
-                ? searchResults.map((instructor) => {
+              {
+                searchResults !== null ? (
+                  searchResults.map((instructor) => {
                     return (
                       <tr
                         key={instructor["instructor_id"]}
@@ -107,32 +103,36 @@ function Instructors() {
                           )
                         }
                       >
-                        <td>
-                          <img
-                            src="/assets/woman-image-placeholder.jpg"
-                            alt="Avatar instructor"
-                            width="50"
-                            height="50"
-                            className="mx-auto"
-                          />
-                        </td>
-                        <td>{instructor["instructor_name"]}</td>
+                        <td className="text-center">{instructor["instructor_name"]}</td>
                         <td>
                           {Object.entries(instructor.office_hours)
                             .filter(([key]) => key !== "room")
                             .map(([key, value]) => (
                               <div key={key}>
-                                <p>Time: {key}</p>
-                                <p>Days: {value.join(", ")}</p>
+                                <p>- {value.join(", ")}: {key}</p>
                               </div>
                             ))}
-                          <p>Room: {instructor.office_hours.room}</p>
+                          <p>
+                            <br />
+                            - Room: {instructor.office_hours.room}
+                          </p>
                         </td>
-                        <td>{instructor["instructor_email"]}</td>
+                        <td className="text-center">
+                          <a 
+                            href={`https://outlook.office365.com/mail/deeplink/compose?to=${instructor["instructor_email"]}`}
+                            className="link link-secondary"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            >
+                              {instructor["instructor_email"]}
+                            </a>
+                        </td>
                       </tr>
                     )
                   })
-                : instructors.map((instructor) => {
+                ) : ( 
+                  instructors.map((instructor) => {
                     return (
                       <tr
                         key={instructor["instructor_id"]}
@@ -145,28 +145,38 @@ function Instructors() {
                           )
                         }
                       >
-                        <td>
-                          <img
-                            src="/assets/woman-image-placeholder.jpg"
-                            alt="Avatar instructor"
-                          />
+                        <td className="text-center">
+                          {instructor["instructor_name"]}
                         </td>
-                        <td>{instructor["instructor_name"]}</td>
                         <td>
                           {Object.entries(instructor.office_hours)
                             .filter(([key]) => key !== "room")
                             .map(([key, value]) => (
                               <div key={key}>
-                                <p>Time: {key}</p>
-                                <p>Days: {value.join(", ")}</p>
+                                <p>- {value.join(", ")}: {key}</p>
                               </div>
                             ))}
-                          <p>Room: {instructor.office_hours.room}</p>
+                          <p>
+                            <br />
+                            - Room: {instructor.office_hours.room}
+                          </p>
                         </td>
-                        <td>{instructor["instructor_email"]}</td>
+                        <td className="text-center">
+                          <a 
+                          href={`https://outlook.office365.com/mail/deeplink/compose?to=${instructor["instructor_email"]}`}
+                          className="link link-secondary"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          >
+                            {instructor["instructor_email"]}
+                          </a>
+                        </td>
                       </tr>
                     )
-                  })}
+                  })
+                )
+              }
             </tbody>
           </table>
         ) : (

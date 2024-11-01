@@ -20,7 +20,7 @@
   @apply p-6 text-lg font-medium text-center text-white bg-neutral;
 }
 .table-body > tr > td {
-  @apply px-8 py-8 text-base font-medium text-center;
+  @apply px-6 py-6 text-base font-medium;
 }
 .table-body > tr {
   @apply cursor-pointer hover:bg-base-300;

@@ -90,7 +90,7 @@ function Course() {
         </div>
         <div className={styles["course-description"]}>
           <h1>About the course:</h1>
-          <p>{course_description}</p>
+          <p className="text-ellipsis overflow-hidden">{course_description}</p>
         </div>
       </div>
       <button
