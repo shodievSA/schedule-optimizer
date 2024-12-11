@@ -4,7 +4,7 @@ const path = require("path");
 const app = express();
 
 app.use("/assets", express.static(
-    path.join(__dirname, "../client/dist/assets")
+    path.join(__dirname, "public", "assets")
 ));
 
 app.use(express.json());

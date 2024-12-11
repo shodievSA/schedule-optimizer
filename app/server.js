@@ -1,30 +1,41 @@
 require("dotenv").config()
+const app = require("./app")
 const session = require("express-session")
 const Sequelize = require("sequelize")
 const SequelizeStore = require("connect-session-sequelize")(session.Store)
 const verifyStudentCredentials = require("./utils/verifyStudentCredentials.js")
 const crypto = require("crypto")
 const path = require("path")
-const app = require("./app")
 const Courses = require("./db/models/courses.js")
 const Students = require("./db/models/students.js")
 const Instructors = require("./db/models/instructors.js")
 const sendPrompt = require("./utils/sendPrompt.js")
 
 const sequelize = new Sequelize(
-  process.env.DB_NAME,
-  process.env.DB_USERNAME,
-  process.env.DB_PASSWORD,
-  {
-    host: process.env.DB_HOST,
-    dialect: "postgres",
-  }
-)
+    process.env.DB_NAME,
+    process.env.DB_USERNAME,
+    process.env.DB_PASSWORD,
+    {
+        host: process.env.DB_HOST,
+        dialect: "postgres",
+        port: 5432
+    }
+);
 
 const sessionStore = new SequelizeStore({
-  db: sequelize,
-  tableName: "sessions",
-})
+    db: sequelize,
+    tableName: "sessions",
+    define: {
+        attributes: {
+            sid: {
+              type: sequelize.Sequelize.STRING(64), 
+              primaryKey: true,
+            },
+            expires: sequelize.Sequelize.DATE,
+            data: sequelize.Sequelize.TEXT
+        }
+    }
+});
 
 sessionStore.sync()
 
@@ -45,10 +56,11 @@ app.use(
 )
 
 app.get("/registration", (req, res) => {
-  const filePath = path.join(__dirname, "../client/dist/index.html")
 
-  res.sendFile(filePath)
-})
+    const filePath = path.join(__dirname, "public", "index.html");
+    res.sendFile(filePath);
+
+});
 
 app.get("/api/v1/available-university-courses", async (req, res) => {
   const courses = await Courses.findAll({
@@ -310,23 +322,6 @@ app.get('/api/v1/course-feedback/:courseID', async (req, res) => {
 
 });
 
-// app.get('/api/v1/instructors', async (req, res) => {
-
-//     const instructorsData = await Instructors.findAll({
-//         attributes: [
-//             "instructor_name",
-//             "instructor_courses",
-//             "instructor_email",
-//             "office_hours"
-//         ]
-//     });
-
-//     console.log(instructorsData)
-
-//     res.send(200).json({ data: instructorsData });
-
-// });
-
 app.get("/api/v1/logout-user", async (req, res) => {
 
     req.session.destroy((err) => {
@@ -343,7 +338,7 @@ app.get("/api/v1/logout-user", async (req, res) => {
 
 app.get("*", async (req, res) => {
   if (req.session["student-email"]) {
-    const filePath = path.join(__dirname, "../client/dist/index.html")
+    const filePath = path.join(__dirname, "public", "index.html")
 
     res.sendFile(filePath)
   } else {
@@ -352,5 +347,5 @@ app.get("*", async (req, res) => {
 })
 
 app.listen(3000, () => {
-  console.log("App running on port 3000...")
+    console.log("App running on port 3000...")
 })
