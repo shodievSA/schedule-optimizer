@@ -8,7 +8,7 @@ docker build -t nodejs-app .
 
 3. RUN POSTGRESQL CONTAINER:
 
-docker run -d   --name postgres-container   --network my-network   -e POSTGRES_DB=schedule_optimizer   -e POSTGRES_PASSWORD=abbos2504   -p 5432:5432   postgres:latest
+docker run -d   --name postgres-container   --network my-network   -e POSTGRES_DB=schedule_optimizer   -e POSTGRES_PASSWORD=abbos2504   -p 5432:5432   postgres
 
 4. RUN NODEJS CONTAINER:
 
@@ -29,4 +29,12 @@ docker exec -it postgres-container psql -U postgres -d schedule_optimizer
 ALTER TABLE sessions 
 ALTER COLUMN sid TYPE character varying(64);
 
-8. Go back to localhost:3000
+8. GO BACK TO localhost:3000
+EMAIL - abbosshodiev@webster.edu
+PASSWORD = Abbos2504
+
+9. Stop CONTAINERS:
+
+docker stop postgres-container 
+
+docker stop nodejs-container
